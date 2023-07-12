@@ -1,0 +1,6 @@
+<?js:
+const svgCaptcha=require("svg-captcha");
+let respp=svgCaptcha.createMathExpr({mathMin:1,mathMax:999,mathOperator:"+",color:true,noise:5});
+ret+=JSON.stringify([respp.data]);
+captchalist[ssid]=respp.text;
+?>
