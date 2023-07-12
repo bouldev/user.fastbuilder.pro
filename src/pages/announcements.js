@@ -46,7 +46,7 @@ let announcementsPage={
 						let ur=await frame.question("Remove announcement","Sure?",true);
 						if(!ur)return;
 						let response=await API.RemoveAnnouncement(uniqid);
-						if(!response.done) {
+						if(!response.success) {
 							return frame.showAlert("Error", "Failed to remove announcement.");
 						}
 						announcementsPage.oninit();
