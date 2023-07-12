@@ -15,7 +15,8 @@ let announcementsPage={
 			while(announcements.is_2fa) {
 				let tfacode=await frame.getInput("双重验证", "您已启用双重验证，请输入您的 Google Authenticator (或任意密码器) 中显示的验证码", "验证码", false, false);
 				if(tfacode===false) {
-					location.href="/logout.web";
+					await API.Logout();
+					m.route.set("/login");
 				}
 				let tfa_res=await API.FinishLogin2FA(tfacode);
 				if(!tfa_res.success) {

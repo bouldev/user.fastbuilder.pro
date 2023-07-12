@@ -1,4 +1,5 @@
 const path=require("path");
+const CopyWebpackPlugin=require("copy-webpack-plugin");
 
 const pages={
 	main: "./src/index.js"/*,
@@ -22,6 +23,13 @@ const pages={
 
 module.exports = {
 	entry: pages,
+	plugins: [
+		new CopyWebpackPlugin({
+			patterns: [
+				{from: "public"}
+			]
+		})
+	],
 	output: {
 		filename: "[name].js",
 		path: path.resolve(__dirname, "bin")
