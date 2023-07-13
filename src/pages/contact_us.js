@@ -66,6 +66,7 @@ let contact_us={
 								contact_us.contact_list=contact_content.item.thread;
 								contact_us.contact_title=contact_content.item.title;
 								contact_us.can_reply=contact_content.item.user_can_add_msg;
+								contact_us.contact_content="";
 								m.redraw();
 							})();
 						}
