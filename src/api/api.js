@@ -5,8 +5,8 @@ import hexenc from "crypto-js/enc-hex";
 let APIList={};
 let APISecret="";
 let errorHandler;
-let APIPrefix="https://api.fastbuilder.pro"
-//let APIPrefix="http://127.0.0.1:8687"
+//let APIPrefix="https://api.fastbuilder.pro"
+let APIPrefix="http://127.0.0.1:8687"
 
 class API {
 	// * [String] `username`: Username.
@@ -541,6 +541,12 @@ class API {
 	static Logout() {
 		return new Promise((cb)=>{
 			$.get(APIList.logout, cb);
+		});
+	}
+	
+	static HelperCharge(value) {
+		return new Promise((cb)=>{
+			$.post(APIList.helper_charge, JSON.stringify({value}), cb);
 		});
 	}
 	

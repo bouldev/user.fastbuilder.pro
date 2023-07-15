@@ -124,7 +124,7 @@ let cashier={
 						}
 					})
 				),
-				m(frame.button, {onclick:(e)=>{
+				m(frame.button, {onclick:async(e)=>{
 					let v=parseInt(cashier.addValue);
 					if(isNaN(v)) {
 						frame.showAlert("ERROR", "Please input an integer");
@@ -134,7 +134,12 @@ let cashier={
 						frame.showAlert("ERROR", "Please input an integer that greater than or equals 10.");
 						return;
 					}
-					location.href="/api/v2/stripe/charge.web?value="+v;
+					let r=await API.HelperCharge(v);
+					if(!r.success) {
+						frame.showAlert("ERROR", r.message);
+					}
+					location.href=r.url;
+					//location.href="/api/v2/stripe/charge.web?value="+v;
 				}}, "充值")
 			),
 			!localStorage.getItem("admin")?null:

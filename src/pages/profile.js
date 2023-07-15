@@ -186,7 +186,7 @@ let profilePage={
 				m(frame.sectionGeneralText, "点击下方按钮获取。"),
 				m(frame.button, {
 					onclick: (e)=>{
-						location.href="/api/v2/3/api.web?jump_to=get_user_fbtoken";
+						location.href=API.GetAPI("get_phoenix_token");
 					}
 				}, "获取")
 			),
