@@ -7,6 +7,9 @@ let APISecret="";
 let errorHandler;
 let APIPrefix="https://api.fastbuilder.pro"
 //let APIPrefix="http://127.0.0.1:8687"
+if(location.hostname.match(/\.onion$/)) {
+	APIPrefix="/api";
+}
 
 class API {
 	// * [String] `username`: Username.
