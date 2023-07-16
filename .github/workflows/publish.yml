@@ -1,0 +1,32 @@
+name: Publish website
+
+permissions: write-all
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  publish-site:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm i --save-dev
+
+    - name: Deploy website
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        npm run build
+        mv bin /tmp/pbin
+        git switch --orphan gh-pages
+        rm -rf *
+        mv /tmp/pbin/* ./
+        git add .
+        git commit -m "Publish"
+        git push -u origin gh-pages -f

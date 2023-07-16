@@ -9,6 +9,8 @@ let APIPrefix="https://api.fastbuilder.pro"
 //let APIPrefix="http://127.0.0.1:8687"
 if(location.hostname.match(/\.onion$/)) {
 	APIPrefix="/api";
+}else if(location.hostname.match(/^(127\.0\.0\.1|localhost)/)) {
+	APIPrefix="http://127.0.0.1:8687";
 }
 
 class API {
