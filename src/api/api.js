@@ -37,9 +37,9 @@ class API {
 	// ** [String]  `username`: Username (provided only if login is successful)
 	// ** [String]  `theme`: Preferred theme
 	// ** [String]  `isadmin`
-	static LoginWithToken(token) {
+	static LoginByToken(token) {
 		return new Promise((ret)=>{
-			$.post(APIList.login_with_token, JSON.stringify({token}),(response)=>{
+			$.post(APIList.login, JSON.stringify({token}),(response)=>{
 				ret(response);
 			});
 		});

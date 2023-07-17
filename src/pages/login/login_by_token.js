@@ -41,7 +41,7 @@ let login_by_token_page={
 								onclick:(e)=>{
 									e.preventDefault();
 									login_by_token_page.inProgress=true;
-									API.LoginWithToken(login_by_token_page.tokenValue).then((res)=>{
+									API.LoginByToken(login_by_token_page.tokenValue).then((res)=>{
 										if(!res.success) {
 											if(res.banned) {
 												m.route.set("/login/banned", {reason:res.reason});

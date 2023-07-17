@@ -103,6 +103,7 @@ let cashier={
 							cashier.kakunincode="";
 							cashier.confirmTrustDivContent="";
 							if(!pr.success) {
+								frame.showAlert("ERROR", pr.message);
 								cashier.finishConfError=pr.message;
 								return m.redraw();
 							}
