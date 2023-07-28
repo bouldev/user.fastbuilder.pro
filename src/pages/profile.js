@@ -421,8 +421,8 @@ let profilePage={
 					}, "解除")
 				]:
 				m("p", "你现在没有受到登录频率限制。")
-			)/*,
-			m(frame.section, {title: "下载登录日志"},
+			),
+			/*m(frame.section, {title: "下载登录日志"},
 				m(frame.sectionGeneralText, "点击下方按钮以下载你的账户的登录日志。"),
 				m(frame.button, {
 					onclick:()=>{location.href="/api/v2/3/api.web?jump_to=download_account_log";}
@@ -506,14 +506,14 @@ let profilePage={
 					]
 				]
 			),*/
-			/*m(frame.section, {title: "付款记录"},
+			m(frame.section, {title: "付款记录"},
 				m(frame.button, {
 					onclick:(e)=>{
 						e.preventDefault();
 						m.route.set("/my-payment-log");
 					}
 				}, "查询付款记录")
-			),
+			)/*,
 			m(frame.section, {"title": "注销用户"},
 				m(frame.sectionGeneralText, [
 					"此功能将您的信息从数据库中",

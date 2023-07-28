@@ -559,6 +559,10 @@ class API {
 		return APIList[name]+"?secret="+APISecret;
 	}
 	
+	static GetAPISecret() {
+		return APISecret;
+	}
+	
 	static Inited() {
 		if(!APIList.login) {
 			return 0;

@@ -25,13 +25,11 @@ let paymentLogPage={
 		for(let i of paymentLogPage.payment_log_entries) {
 			payment_log_output.push(m(frame.section, {title: ((new Date(i.identifier)).toLocaleString())},
 				m("div", m.trust(i.description)),
-				i.no_refund?
-				m("b", "不可退款")
-				:m(frame.button, {
+				m(frame.button, {
 					onclick:()=>{
-						window.open("/api/v2/3/api.web?jump_to=do_refund&log_id="+i.identifier);
+						window.open("https://api.fastbuilder.pro/local/cgi/receipt?secret="+API.GetAPISecret()+"&v="+i.identifier);
 					}
-				}, "退款")
+				}, "查看收据")
 			));
 		}
 		return m(frame.frame, {pageName:"付款记录" ,pageIcon},
