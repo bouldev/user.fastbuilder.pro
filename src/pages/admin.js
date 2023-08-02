@@ -781,7 +781,7 @@ let ap={
 						ap.az_InProgress=true;
 						(async ()=>{
 							let r=await API.AddBalance(ap.az_TargetUsername, ap.az_Value);
-							if(!r.done) {
+							if(!r.success) {
 								ap.az_InProgress=false;
 								frame.showAlert("Error", "Failed");
 								m.redraw();

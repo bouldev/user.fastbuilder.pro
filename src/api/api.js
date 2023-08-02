@@ -154,7 +154,7 @@ class API {
 	
 	static AddBalance(username,value) {
 		return new Promise((cb)=>{
-			$.post(APIList.ext.add_balance, JSON.stringify({username, value}), cb);
+			$.post(APIList.ext.add_balance, JSON.stringify({username, value: parseInt(value)}), cb);
 		});
 	}
 	
