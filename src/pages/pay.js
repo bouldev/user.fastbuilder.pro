@@ -1,9 +1,6 @@
 import m from "mithril";
 import frame from "../theme/frame";
 import API from "../api/api";
-import {loadStripe} from "@stripe/stripe-js";
-let stripe;
-let stripe_elements;
 
 const pageIcon=`<svg class="sectionTitle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M551.991 64H144.28l-8.726-44.608C133.35 8.128 123.478 0 112 0H12C5.373 0 0 5.373 0 12v24c0 6.627 5.373 12 12 12h80.24l69.594 355.701C150.796 415.201 144 430.802 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-18.136-7.556-34.496-19.676-46.142l1.035-4.757c3.254-14.96-8.142-29.101-23.452-29.101H203.76l-9.39-48h312.405c11.29 0 21.054-7.869 23.452-18.902l45.216-208C578.695 78.139 567.299 64 551.991 64zM208 472c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm256 0c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm23.438-200H184.98l-31.31-160h368.548l-34.78 160z"></path></svg>`;
 
@@ -18,14 +15,10 @@ let pay={
 	fatal: false,
 	success: false,
 	showcodepwnpay: false,
-	stripeloading: false,
 	iframeurl: "",
 	showingcodepwnpay: false,
-	showingstripepay: false,
 	use_point_input: "",
 	oninit: async ()=>{
-		pay.showingstripepay=false;
-		pay.stripeloading=false;
 		pay.info="";
 		pay.paired=false;
 		pay.isfree=false;
@@ -44,11 +37,6 @@ let pay={
 		if(!payinfo.success)return;
 		if(intv)clearInterval(intv);
 		intv=setInterval(dorefresh,1000);
-		if(payinfo.test_key) {
-			stripe=await loadStripe(payinfo.test_key);
-			return;
-		}
-		stripe=await loadStripe("pk_live_51MKodeE2lNjB2a2Nh6EKCAtmksHMWf8PrCs6EMK7dPdUHoTbyXcawldsiVs0iM9NTYxuU6llV50UupFmbjsUItms00aANHRiCT");
 	},
 	onremove: ()=>{
 		if(intv) {
@@ -124,25 +112,14 @@ let pay={
 					{
 						style: {
 							"width": "40%",
-							"display": (pay.showingstripepay&&!pay.paired)?"":"none"
+							"display": pay.paired?"none":""
 						}
 					},
 					m("form#payment-form",
-						m("div#link-auth-el"),
-						m("div#payment-el"),
-						m("button.btn.btn-primary", {disabled:pay.stripeloading,style:{width:"100%"},onclick:async(e)=>{
+						m("p", "点击下方按钮完成支付。"),
+						m("button.btn.btn-primary", {style:{width:"100%"},onclick:async(e)=>{
 							e.preventDefault();
-							pay.stripeloading=true;
-							m.redraw();
-							const {error}=await stripe.confirmPayment({
-								elements: stripe_elements,
-								confirmParams: {
-									return_url: pay.stripe_return_url
-								}
-							});
-							alert(error.message);
-							pay.stripeloading=false;
-							m.redraw();
+							location.href=(await API.StripeCreateSession()).url;
 						}},
 							"支付"
 						)
@@ -171,15 +148,6 @@ async function dorefresh(manual) {
 	}
 	if(!pay.paired) {
 		if(!pairInfo.paired) {
-			if(!pay.isfree&&stripe&&!pay.showingstripepay) {
-				pay.showingstripepay=true;
-				let stripe_s=await API.StripeCreateSession();
-				stripe_elements=stripe.elements({theme:"stripe", clientSecret: stripe_s.clientSecret});
-				stripe_elements.create("linkAuthentication").mount("#link-auth-el");
-				stripe_elements.create("payment", {layout: "tabs"}).mount("#payment-el");
-				pay.stripe_return_url=stripe_s.return_url;
-				m.redraw();
-			}
 			if(manual) {
 				pay.error=pairInfo.message;
 				m.redraw();

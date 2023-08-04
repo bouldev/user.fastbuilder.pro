@@ -537,12 +537,6 @@ class API {
 		});
 	}
 	
-	static WaiveRateLimit(captcha) {
-		return new Promise((cb)=>{
-			$.get(APIList.waive_rate_limit, {captcha}, cb);
-		});
-	}
-	
 	static Logout() {
 		return new Promise((cb)=>{
 			$.get(APIList.logout, cb);

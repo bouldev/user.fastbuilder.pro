@@ -36,7 +36,6 @@ let profilePage={
 	is_commercial_2022: false,
 	is_2fa_enabled: false,
 	is_2fa_in_progress: false,
-	is_rate_limited: false,
 	captchaRand: 0,
 	rate_limit_waiving_in_progress:false,
 	oninit: async ()=>{
@@ -53,7 +52,6 @@ let profilePage={
 			profilePage.binded_mail=null;
 		}
 		profilePage.monthly_plan_duration=generalInfo.monthly_plan_duration;
-		profilePage.is_rate_limited=generalInfo.is_rate_limited;
 		m.redraw();
 		let helperInfo=await API.GetHelperStatus();
 		profilePage.helpername=helperInfo.username;
@@ -390,37 +388,6 @@ let profilePage={
 						profilePage.bot_linkCode_displayOrdered=(!profilePage.bot_linkCode_displayOrdered);
 					}
 				}, profilePage.bot_linkCode_displayOrdered?"隐藏链接口令":"显示链接口令")
-			),
-			m(frame.section, {title: "登录频率限制"},
-				m(frame.sectionGeneralText, "为防止软件故障导致的不必要的服务器资源占用，你可能被限制登录频率，你可以在这里将其解除。"),
-				profilePage.is_rate_limited?[
-					m("p", "你被限制了登录频率，请输入验证码解除限制。"),
-					m("img", {style:{height:"50px",width:"300px"},src:API.GetAPI("captcha")+"&rand="+profilePage.captchaRand}),
-					m(frame.formInput, {
-						value: profilePage.rate_limit_waiving_captcha,
-						oninput: (e)=>{
-							profilePage.rate_limit_waiving_captcha=e.target.value;
-						}
-					}, "验证码"),
-					m(frame.button, {
-						disabled: profilePage.rate_limit_waiving_in_progress,
-						onclick: ()=>{
-							profilePage.rate_limit_waiving_in_progress=true;
-							(async()=>{
-								let rl_resp=await API.WaiveRateLimit(profilePage.rate_limit_waiving_captcha);
-								profilePage.captchaRand=Math.random();
-								profilePage.rate_limit_waiving_in_progress=false;
-								if(!rl_resp.success) {
-									frame.showAlert("失败", rl_resp.message);
-									return;
-								}
-								profilePage.is_rate_limited=false;
-								m.redraw();
-							})();
-						}
-					}, "解除")
-				]:
-				m("p", "你现在没有受到登录频率限制。")
 			),
 			/*m(frame.section, {title: "下载登录日志"},
 				m(frame.sectionGeneralText, "点击下方按钮以下载你的账户的登录日志。"),
