@@ -626,7 +626,7 @@ class API {
 				}
 			});*/
 			if(!GiveUpIpv6&&APIPrefix=="https://api.fastbuilder.pro") {
-				$.get("https://api6.fastbuilder.pro/",(ret)=>{
+				$.get("https://api6.fastbuilder.pro/",async (ret)=>{
 					if(GiveUpIpv6)
 						return;
 					// If successful
@@ -634,7 +634,7 @@ class API {
 					GiveUpIpv6=true;
 					cb(await DoInit());
 				});
-				$.get("https://api.fastbuilder.pro/",(ret)=>{
+				$.get("https://api.fastbuilder.pro/",async (ret)=>{
 					if(GiveUpIpv6)
 						return;
 					// If legacy one comes first
