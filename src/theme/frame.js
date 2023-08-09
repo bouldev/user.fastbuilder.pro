@@ -416,7 +416,7 @@ function getCaptchaInput(title, content, tip, secret, danger) {
 					title,
 					content: m("div",
 						m("p", content),
-						m("img", {style:{"background-color":"white"},src:"/api/v2/3/get-captcha.web?rand="+arand}),
+						m("img", {style:{"background-color":"white"},src:API.GetAPI("captcha")+"&rand="+arand}),
 						m("br"),
 						m("div.input-group",
 							m("span.input-group-text", tip),

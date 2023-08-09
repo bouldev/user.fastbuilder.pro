@@ -57,7 +57,6 @@ let pay={
 						pay.use_point_input=e.target.value;
 					}
 				}),
-				m("p", "注意：在抵价后即使支付未完成也不会返还已经使用的 Point 。"),
 				m(frame.button, {
 					onclick: async ()=>{
 						let upr=await API.UsePoints(pay.use_point_input);
@@ -112,7 +111,7 @@ let pay={
 					{
 						style: {
 							"width": "40%",
-							"display": pay.paired?"none":""
+							"display": (pay.paired||pay.isfree)?"none":""
 						}
 					},
 					m("form#payment-form",

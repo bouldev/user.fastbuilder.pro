@@ -10,6 +10,7 @@ let ap={
 	newAnnouncementPublishing: false,
 	userlist: [],
 	payments: [],
+	selected_whitelist_item: null,
 	selected_serverlist: {
 		username: "",
 		content: []
@@ -49,8 +50,8 @@ let ap={
 		ap.payments_maxpage=whitelist_and_payments.pn_plist;
 		if(ap.whitelist_maxpage==0) ap.whitelist_maxpage=1;
 		if(ap.payments_maxpage==0) ap.payments_maxpage=1;
-		let {pil} = await API.GetPil();
-		ap.pil_value=pil;
+		//let {pil} = await API.GetPil();
+		//ap.pil_value=pil;
 		m.redraw();
 	},
 	view: (vnode)=>{
@@ -110,6 +111,13 @@ let ap={
 					}
 				})),
 				m("td", [
+					m("button.btn.btn-primary", {
+						onclick: async ()=>{
+							ap.selected_whitelist_item=(await API.GetUserWhitelistValue(ap.userlist[index_num].username)).value;
+							m.redraw();
+						}
+					}, "DB"),
+					" ",
 					m("button.btn.btn-secondary", {
 						onclick: ()=>{
 							ap.selected_serverlist.username=ap.userlist[index_num].username;
@@ -117,30 +125,6 @@ let ap={
 							m.redraw();
 						}
 					}, "Serv."),
-					/*" ",
-					m("button.btn.btn-danger", {
-						onclick: async ()=>{
-							if(i.banned) {
-								let confirm_stat=await frame.question("Retract Ticket", `Retract the ticket for ${i.username}?`, true);
-								if(!confirm_stat)return;
-								let r=await API.BanUser(i.username);
-								if(!r.success) {
-									return await frame.showAlert("Failed", r.message);
-								}
-								i.banned=false;
-								m.redraw();
-								return;
-							}
-							let reason=await frame.getInput("Fine User", "Please confirm and give a reason for fining "+i.username, "Reason", false, true);
-							if(reason===false)return;
-							let r=await API.BanUser(i.username, reason);
-							if(!r.success) {
-								return await frame.showAlert("Failed", r.message);
-							}
-							i.banned=true;
-							m.redraw();
-						}
-					}, !i.banned?"Fine":"RetrTkt"),*/
 					" ",
 					m("button.btn.btn-danger", {
 						onclick: async ()=>{
@@ -356,6 +340,93 @@ let ap={
 				}
 			}, "^")
 		));
+		let renderedWhitelistField=null;
+		if(ap.selected_whitelist_item) {
+			let body_items=[];
+			let username="???";
+			for(let i of ap.selected_whitelist_item) {
+				if(i.name=="username")
+					username=i.value;
+				let item_value=(i.has_value&&i.editable)?i.value.toString():m("label", {style:"color:gray;"}, "(empty)");
+				if(!i.editable)
+					item_value=m("label", {style:"color:gray;"}, "(complex)");
+				let action_buttons=[];
+				if(i.has_value) {
+					action_buttons.push(m("button.btn.btn-danger", {
+						onclick: async (e)=>{
+							await ap.oninit();
+							ap.selected_whitelist_item=(await API.SetUserWhitelistValue(username, i.name, null)).value;
+							m.redraw();
+						}
+					}, "Unset"));
+				}
+				body_items.push(m("tr",
+					m("td", i.name),
+					i.editing?
+					m("td", m("input.col-sm-4.form-control", {
+						style: {
+							width: "initial"
+						},
+						value: i.editing_value,
+						oninput: (e)=>{
+							i.editing_value=e.target.value;
+						},
+						onkeypress: async (e)=>{
+							if(e.key=="Enter") {
+								e.preventDefault();
+								ap.selected_whitelist_item=(await API.SetUserWhitelistValue(username, i.name, i.type=="int"?parseInt(i.editing_value):i.editing_value)).value;
+								m.redraw();
+							}
+						}
+					})):
+					m("td", {
+						style: i.editable?"cursor:pointer;":"",
+						onclick:async(e)=>{
+							e.preventDefault();
+							if(i.type=="bool") {
+								let new_val=true;
+								if(i.has_value&&i.value)
+									new_val=false;
+								ap.selected_whitelist_item=(await API.SetUserWhitelistValue(username, i.name, new_val)).value;
+								m.redraw();
+								return;
+							}
+							i.editing_value=i.has_value?i.value.toString():"";
+							i.editing=true;
+						}
+					}, item_value),
+					m("td", action_buttons)
+				));
+			}
+			renderedWhitelistField=m(frame.section, {title: "Database document for "+username},
+				m("div.row.pre-scrollable",
+					m("table.table",
+						m("thead",
+							m("tr",
+								m("th", {scope: "col"}, "Item"),
+								m("th", {scope: "col"}, "Value"),
+								m("th", {scope: "col"}, "Actions")
+							)
+						),
+						m("tbody", body_items)
+					)
+				),
+				m("div",
+					m("button.btn.btn-primary", {
+						onclick: async (e)=>{
+							ap.selected_whitelist_item=(await API.GetUserWhitelistValue(username)).value;
+							m.redraw();
+						}
+					}, "Refresh"),
+					" ",
+					m("button.btn.btn-secondary", {
+						onclick: ()=>{
+							ap.selected_whitelist_item=null;
+						}
+					}, "Close")
+				)
+			);
+		}
 		let renderedRentalServerField=null;
 		if(ap.selected_serverlist.username) {
 			let body_items=[];
@@ -626,6 +697,7 @@ let ap={
 					})
 				)
 			),
+			renderedWhitelistField,
 			renderedRentalServerField,
 			/*m(frame.section, {title: "确认码列表"},
 				m("div", {style:{display:"flex"}},

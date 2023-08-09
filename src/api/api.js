@@ -350,7 +350,7 @@ class API {
 	
 	static RedeemForFree(captcha) {
 		return new Promise((cb)=>{
-			$.get(APIList.redeem_free, `captcha=${captcha}`, cb);
+			$.get(APIList.redeem_for_free, `captcha=${captcha}`, cb);
 		});
 	}
 	
@@ -456,7 +456,7 @@ class API {
 	
 	static UsePoints(points) {
 		return new Promise((cb)=>{
-			$.get(APIList.use_points, {points}, cb);
+			$.post(APIList.use_points_on_checkout, JSON.stringify({value:parseInt(points)}), cb);
 		});
 	}
 	
@@ -547,6 +547,18 @@ class API {
 	static HelperCharge(value) {
 		return new Promise((cb)=>{
 			$.post(APIList.helper_charge, JSON.stringify({value}), cb);
+		});
+	}
+	
+	static GetUserWhitelistValue(username) {
+		return new Promise((cb)=>{
+			$.get(APIList.ext.get_user_whitelist_value, {username}, cb);
+		});
+	}
+	
+	static SetUserWhitelistValue(username, name, value) {
+		return new Promise((cb)=>{
+			$.post(APIList.ext.set_user_whitelist_value, JSON.stringify({username,item_name:name,value,is_unset:value===null}), cb);
 		});
 	}
 	
