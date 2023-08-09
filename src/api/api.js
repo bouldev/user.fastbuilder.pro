@@ -626,20 +626,21 @@ class API {
 				}
 			});*/
 			if(!GiveUpIpv6&&APIPrefix=="https://api.fastbuilder.pro") {
+				let _callback=this.DoInit;
 				$.get("https://api6.fastbuilder.pro/",async (ret)=>{
 					if(GiveUpIpv6)
 						return;
 					// If successful
 					APIPrefix="https://api6.fastbuilder.pro";
 					GiveUpIpv6=true;
-					cb(await DoInit());
+					cb(await _callback());
 				});
 				$.get("https://api.fastbuilder.pro/",async (ret)=>{
 					if(GiveUpIpv6)
 						return;
 					// If legacy one comes first
 					GiveUpIpv6=true;
-					cb(await DoInit());
+					cb(await _callback());
 				});
 				return;
 			}
