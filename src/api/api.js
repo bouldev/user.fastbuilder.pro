@@ -5,6 +5,7 @@ import hexenc from "crypto-js/enc-hex";
 let APIList={};
 let APISecret="";
 let errorHandler;
+let GiveUpIpv6=false;
 let APIPrefix="https://api.fastbuilder.pro"
 //let APIPrefix="http://127.0.0.1:8687"
 if(location.hostname.match(/\.onion$/)) {
@@ -624,6 +625,24 @@ class API {
 					if(opt.
 				}
 			});*/
+			if(!GiveUpIpv6&&APIPrefix=="https://api.fastbuilder.pro") {
+				$.get("https://api6.fastbuilder.pro/",(ret)=>{
+					if(GiveUpIpv6)
+						return;
+					// If successful
+					APIPrefix="https://api6.fastbuilder.pro";
+					GiveUpIpv6=true;
+					cb(await DoInit());
+				});
+				$.get("https://api.fastbuilder.pro/",(ret)=>{
+					if(GiveUpIpv6)
+						return;
+					// If legacy one comes first
+					GiveUpIpv6=true;
+					cb(await DoInit());
+				});
+				return;
+			}
 			$.get(APIPrefix+"/api/api",{with_prefix:APIPrefix},(ret)=>{
 				if(!ret.username) {
 					localStorage.removeItem("username");
