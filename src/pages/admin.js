@@ -230,8 +230,9 @@ let ap={
 		));
 		let paymentLog_rendered=[];
 		for(let i of ap.payments) {
-			if(i.helper&&i.helper.length>40) {
-				i.helper=i.helper.substr(0,36)+"...";
+			let display_helper=i.helper;
+			if(i.helper&&i.helper.length>20) {
+				display_helper=i.helper.substr(0,20)+"...";
 			}
 			paymentLog_rendered.push(m("tr", {
 				style: i.refunded?"text-decoration-line:line-through;color:gray;":"",
@@ -253,7 +254,7 @@ let ap={
 			},
 				m("td", ((new Date(i.date)).toLocaleString())),
 				m("td", i.username),
-				m("td", i.helper||"(null)"),
+				m("td", display_helper||"(null)"),
 				m("td", i.price),
 				m("td", i.helper_price),
 				m("td", m.trust(i.description.replace(/\n/g, "<br/>")))

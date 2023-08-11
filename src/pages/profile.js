@@ -37,6 +37,7 @@ let profilePage={
 	is_2fa_enabled: false,
 	is_2fa_in_progress: false,
 	captchaRand: 0,
+	user_points: 0,
 	rate_limit_waiving_in_progress:false,
 	oninit: async ()=>{
 		profilePage.captchaRand=Math.random();
@@ -46,6 +47,7 @@ let profilePage={
 		profilePage.bot_linkCode=generalInfo.blc;
 		profilePage.gamenameinputcontent=generalInfo.cn_username;
 		profilePage.slots=generalInfo.slots;
+		profilePage.user_points=generalInfo.points;
 		if(generalInfo.binded_mail) {
 			profilePage.binded_mail=generalInfo.binded_mail;
 		}else{
@@ -163,7 +165,16 @@ let profilePage={
 				},
 				"应用")
 			),
-			m(frame.section, {title: "月额Plan"},
+			m(frame.section, {title: "Points"},
+				m("p", "100 pts = 1 CNY"),
+				m("p", ["剩余 Points: ", m("b", {style:"color:blue;"}, profilePage.user_points.toString())]),
+				m(frame.button, {
+					onclick: ()=>{
+						window.open(`https://api.fastbuilder.pro/local/cgi/exchange_points?secret=${API.GetAPISecret()}`);
+					}
+				}, "兑换")
+			),
+			m(frame.section, {title: "月额 Plan"},
 				profilePage.is_commercial_2022?m("p",{style:{color:"red"}},"由于您的账号是商业账号，在有效期过期后数日后将会被删除。"):null,
 				m("p", profilePage.monthly_plan_duration===-1?"永久":`剩余 ${profilePage.monthly_plan_duration} 天有效`)
 			),
@@ -251,34 +262,6 @@ let profilePage={
 					}, "网易实名认证")
 				]
 			),
-			/*m(frame.section, {title: "合并用户"},
-				m(frame.sectionGeneralText, "将当前用户的租赁服槽位合并到目标用户，合并后当前用户将被禁止登录，其他用户数据(包括辅助用户信息)不会被转移。"),
-				profilePage.combineUserError.length!=0?m("p",{style:{color:"red"}},profilePage.combineUserError):null,
-				m(frame.formInput, {
-					isPassword: true,
-					value: profilePage.combineUser_currentUserPassword,
-					oninput:(e)=>{
-						profilePage.combineUser_currentUserPassword=e.target.value;
-					}
-				}, "当前用户密码"),
-				m(frame.formInput, {
-					value: profilePage.combineUser_targetUsername,
-					oninput:(e)=>{
-						profilePage.combineUser_targetUsername=e.target.value;
-					}
-				}, "目标用户名"),
-				m(frame.formInput, {
-					isPassword: true,
-					value: profilePage.combineUser_targetUserPassword,
-					oninput:(e)=>{
-						profilePage.combineUser_targetUserPassword=e.target.value;
-					}
-				}, "目标用户密码")
-			),
-			これは本当にまだ必要あるか？
-			SLOT はもうとっくに購入可能になったから。
-			それでは、この功能を削除しよ
-			*/
 			m(frame.section, {title: "双重验证"},
 				m(frame.sectionGeneralText, "双重验证可以防止未经授权的人登入你的账号。双重验证使用密码器生成的一次性密码。"),
 				m(frame.button, {
