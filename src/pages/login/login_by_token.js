@@ -7,6 +7,7 @@ let login_by_token_page={
 	loginFailed_reason: "",
 	userbannedfor: "",
 	tokenValue: "",
+	mfaValue: "",
 	inProgress: false,
 	goingtouc: false,
 	oninit:()=>{
@@ -15,6 +16,7 @@ let login_by_token_page={
 		login_by_token_page.inProgress=false;
 		login_by_token_page.goingtouc=false;
 		login_by_token_page.tokenValue="";
+		login_by_token_page.mfaValue="";
 	},
 	view:(vnode)=>{
 		return m(loginTheme.login_frame, 
@@ -34,6 +36,10 @@ let login_by_token_page={
 							m("input.lowin-input",{placeholder:"",type:"text",id:"token-input-id",readonly:login_by_token_page.inProgress,oninput:(e)=>{login_by_token_page.tokenValue=e.target.value;},value:login_by_token_page.tokenValue}),
 							m("label",{for:"token-input-id"}, "FBToken")
 						),
+						m("div.lowin-group",
+							m("input.lowin-input",{placeholder:"",type:"text",id:"mfa-input-id",readonly:login_by_token_page.inProgress,oninput:(e)=>{login_by_token_page.mfaValue=e.target.value;},value:login_by_token_page.mfaValue}),
+							m("label",{for:"mfa-input-id"}, ["双重验证 ", m("b",{style:"color:red;"},"(若未设置则禁止使用 FBToken 登录)")])
+						),
 						m("div.lowin-buttondiv",
 							m("button.lowin-btn", {
 								disabled: login_by_token_page.inProgress,
@@ -41,7 +47,7 @@ let login_by_token_page={
 								onclick:(e)=>{
 									e.preventDefault();
 									login_by_token_page.inProgress=true;
-									API.LoginByToken(login_by_token_page.tokenValue).then((res)=>{
+									API.LoginByToken(login_by_token_page.tokenValue,login_by_token_page.mfaValue).then((res)=>{
 										if(!res.success) {
 											if(res.banned) {
 												m.route.set("/login/banned", {reason:res.reason});

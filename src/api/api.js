@@ -1,5 +1,6 @@
 import $ from "jquery";
 import sha256 from "crypto-js/sha256";
+import md5 from "crypto-js/md5";
 import hexenc from "crypto-js/enc-hex";
 
 let APIList={};
@@ -23,9 +24,9 @@ class API {
 	// ** [String]  `username`: Username (provided only if login is successful)
 	// ** [String]  `theme`: Preferred theme
 	// ** [String]  `isadmin`
-	static Login(username, password) {
+	static Login(username, password, mfa_code) {
 		return new Promise((ret)=>{
-			$.post(APIList.login, JSON.stringify({username, password:hexenc.stringify(sha256(password))}),(response)=>{
+			$.post(APIList.login, JSON.stringify({username, password:hexenc.stringify(sha256(password)), mfa_code}),(response)=>{
 				ret(response);
 			});
 		});
@@ -38,9 +39,9 @@ class API {
 	// ** [String]  `username`: Username (provided only if login is successful)
 	// ** [String]  `theme`: Preferred theme
 	// ** [String]  `isadmin`
-	static LoginByToken(token) {
+	static LoginByToken(token, mfa_code) {
 		return new Promise((ret)=>{
-			$.post(APIList.login, JSON.stringify({token}),(response)=>{
+			$.post(APIList.login, JSON.stringify({token, mfa_code}),(response)=>{
 				ret(response);
 			});
 		});
@@ -559,6 +560,18 @@ class API {
 	static SetUserWhitelistValue(username, name, value) {
 		return new Promise((cb)=>{
 			$.post(APIList.ext.set_user_whitelist_value, JSON.stringify({username,item_name:name,value,is_unset:value===null}), cb);
+		});
+	}
+	
+	static BindNeteaseAccount(email, password) {
+		return new Promise((cb)=>{
+			$.post(APIList.bind_netease_account_action, JSON.stringify({email, password:hexenc.stringify(md5(password))}), cb);
+		});
+	}
+	
+	static GetUserRentalServers() {
+		return new Promise((cb)=>{
+			$.get(APIList.get_user_rental_servers, cb);
 		});
 	}
 	

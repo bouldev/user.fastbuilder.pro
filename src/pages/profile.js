@@ -17,6 +17,8 @@ let profilePage={
 	helperCreated: false,
 	helperDefaultButtonWorking: false,
 	acceptWorldChat: false,
+	phoenix_otp: "",
+	phoenix_otp_displayOrdered: false,
 	//combineUserError: "",
 	changePassword_working: false,
 	//combineUser_currentUserPassword: "",
@@ -39,6 +41,8 @@ let profilePage={
 	captchaRand: 0,
 	user_points: 0,
 	rate_limit_waiving_in_progress:false,
+	nemcbind_inputs: ["", ""],
+	nemcbind_status: false,
 	oninit: async ()=>{
 		profilePage.captchaRand=Math.random();
 		profilePage.is_2fa_in_progress=false;
@@ -47,7 +51,9 @@ let profilePage={
 		profilePage.bot_linkCode=generalInfo.blc;
 		profilePage.gamenameinputcontent=generalInfo.cn_username;
 		profilePage.slots=generalInfo.slots;
-		profilePage.user_points=generalInfo.points;
+		profilePage.user_points=generalInfo.points||0;
+		profilePage.nemcbind_status=generalInfo.nemcbind_status;
+		profilePage.phoenix_otp=generalInfo.phoenix_otp;
 		if(generalInfo.binded_mail) {
 			profilePage.binded_mail=generalInfo.binded_mail;
 		}else{
@@ -233,7 +239,9 @@ let profilePage={
 									let res=await API.ChangeHelperNameOrCreateHelper(profilePage.helpername);
 									if(!res.success) {
 										if(res.verify_url) {
-											frame.showIframe("网易验证码验证",res.verify_url);
+											await frame.showAlert("网易验证码验证", "本次操作需要完成网易验证码验证，点击 OK 后将跳转至验证页面。");
+											window.open(res.verify_url);
+											//frame.showIframe("网易验证码验证",res.verify_url);
 										}
 										profilePage.helpername_set_error=res.message;
 										profilePage.helperDefaultButtonWorking=false;
@@ -363,6 +371,16 @@ let profilePage={
 					}
 				}, "更改")
 			),
+			m(frame.section, {title: "PhoenixBuilder 一次性密码"},
+				m(frame.sectionGeneralText, "这是你用于登录 PhoenixBuilder 的一次性密码，你不能使用用户中心密码登录 PhoenixBuilder 。"),
+				m(frame.sectionGeneralText, "Token 登录不受此影响。"),
+				m("p", profilePage.phoenix_otp_displayOrdered?profilePage.phoenix_otp:"***"),
+				m(frame.button, {
+					onclick: (e) => {
+						profilePage.phoenix_otp_displayOrdered=(!profilePage.phoenix_otp_displayOrdered);
+					}
+				}, profilePage.phoenix_otp_displayOrdered?"隐藏密码":"显示密码")
+			),
 			m(frame.section, {title: "机器人链接口令"},
 				m(frame.sectionGeneralText, "您可以使用以下链接口令来链接此账号到机器人。请注意：这将给予其对您账号完整的控制权！"),
 				m("p", profilePage.bot_linkCode_displayOrdered?profilePage.bot_linkCode:m("b", "***")),
@@ -454,6 +472,50 @@ let profilePage={
 							}
 						}, "加入测试")
 					]
+				]
+			),*/
+			/*m(frame.section, {title: "绑定网易游戏账号"},
+				profilePage.nemcbind_status?
+				[
+					m("p", "已绑定"),
+					m(frame.button, {
+						onclick:async()=>{
+							if(await frame.question("查看信息", "此操作需要登入你的网易账号，继续操作将会挤占登录，要继续吗？", true)) {
+								m.route.set("/my-rental-servers");
+							}
+						}
+					}, "我的服务器")
+				]:
+				[
+					m(frame.formInput, {
+						value: profilePage.nemcbind_inputs[0],
+						oninput: (e)=>{
+							profilePage.nemcbind_inputs[0]=e.target.value;
+						}
+					}, "邮箱"),
+					m(frame.formInput, {
+						isPassword: true,
+						value: profilePage.nemcbind_inputs[1],
+						oninput: (e)=>{
+							profilePage.nemcbind_inputs[1]=e.target.value;
+						}
+					}, "密码"),
+					m(frame.button, {
+						onclick:async(e)=>{
+							e.preventDefault();
+							let ret=await API.BindNeteaseAccount(profilePage.nemcbind_inputs[0], profilePage.nemcbind_inputs[1]);
+							profilePage.nemcbind_inputs=["",""];
+							if(!ret.success) {
+								await frame.showAlert("error", ret.message);
+								if(ret.verify_url) {
+									window.open(ret.verify_url);
+								}
+								return;
+							}
+							profilePage.nemcbind_status=true;
+							m.redraw();
+						}
+					}, "绑定")
 				]
 			),*/
 			m(frame.section, {title: "付款记录"},

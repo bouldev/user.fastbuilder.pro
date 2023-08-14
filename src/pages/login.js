@@ -8,6 +8,7 @@ let loginPage={
 	userbannedfor:"",
 	usernameValue:"",
 	passwordValue:"",
+	mfaValue:"",
 	inProgress: false,
 	goingtouc: false,
 	oninit:()=>{
@@ -15,6 +16,7 @@ let loginPage={
 		loginPage.userbannedfor="";
 		loginPage.loginFailed_reason="";
 		loginPage.passwordValue="";
+		loginPage.mfaValue="";
 		loginPage.inProgress=false;
 		loginPage.goingtouc=false;
 	},
@@ -40,6 +42,10 @@ let loginPage={
 							m("input.lowin-input",{placeholder:"",type:"password",id:"password-input-id",readonly:loginPage.inProgress,oninput:(e)=>{loginPage.passwordValue=e.target.value;},value:loginPage.passwordValue}),
 							m("label",{for:"password-input-id"}, "密码")
 						),
+						m("div.lowin-group",
+							m("input.lowin-input",{placeholder:"",type:"password",id:"mfa-input-id",readonly:loginPage.inProgress,oninput:(e)=>{loginPage.mfaValue=e.target.value;},value:loginPage.mfaValue}),
+							m("label",{for:"mfa-input-id"}, "双重验证 (若未设置则留空)")
+						),
 						m("div.lowin-buttondiv",
 							m("button.lowin-btn", {
 								disabled: loginPage.inProgress,
@@ -48,7 +54,7 @@ let loginPage={
 									e.preventDefault();
 									loginPage.loginFailed_reason="";
 									loginPage.inProgress=true;
-									API.Login(loginPage.usernameValue,loginPage.passwordValue).then((res)=>{
+									API.Login(loginPage.usernameValue,loginPage.passwordValue,loginPage.mfaValue).then((res)=>{
 										if(!res.success) {
 											if(res.banned) {
 												m.route.set("/login/banned", {reason:res.reason,ticket:res.ticket_code});
