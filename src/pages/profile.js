@@ -9,6 +9,7 @@ let profilePage={
 	isgamenamesetfailed: false,
 	monthly_plan_duration: 0,
 	slots: [],
+	no_security: false,
 	helpername: "",
 	helpername_set_error: "",
 	helperuserbtntitle: "",
@@ -48,6 +49,7 @@ let profilePage={
 		profilePage.is_2fa_in_progress=false;
 		let generalInfo=await API.FetchProfileGeneral();
 		profilePage.is_2fa_enabled=generalInfo.is_2fa;
+		profilePage.no_security=generalInfo.no_security;
 		profilePage.bot_linkCode=generalInfo.blc;
 		profilePage.gamenameinputcontent=generalInfo.cn_username;
 		profilePage.slots=generalInfo.slots;
@@ -270,6 +272,7 @@ let profilePage={
 					}, "网易实名认证")
 				]
 			),
+			profilePage.no_security?null:
 			m(frame.section, {title: "双重验证"},
 				m(frame.sectionGeneralText, "双重验证可以防止未经授权的人登入你的账号。双重验证使用密码器生成的一次性密码。"),
 				m(frame.button, {
@@ -371,6 +374,7 @@ let profilePage={
 					}
 				}, "更改")
 			),
+			profilePage.no_security?null:
 			m(frame.section, {title: "PhoenixBuilder 一次性密码"},
 				m(frame.sectionGeneralText, "这是你用于登录 PhoenixBuilder 的一次性密码，你不能使用用户中心密码登录 PhoenixBuilder 。"),
 				m(frame.sectionGeneralText, "Token 登录不受此影响。"),
@@ -525,6 +529,16 @@ let profilePage={
 						m.route.set("/my-payment-log");
 					}
 				}, "查询付款记录")
+			),
+			profilePage.no_security?null:
+			m(frame.section, {title: "放弃安全措施"},
+				m(frame.sectionGeneralText, "你拥有放弃用户中心一切安全措施的权利。此操作不可撤回。"),
+				m(frame.button, {
+					onclick: async ()=>{
+						await API.AbandonSecurityMeasures();
+						profilePage.oninit();
+					}
+				}, "放弃")
 			)/*,
 			m(frame.section, {"title": "注销用户"},
 				m(frame.sectionGeneralText, [

@@ -575,6 +575,12 @@ class API {
 		});
 	}
 	
+	static AbandonSecurityMeasures() {
+		return new Promise((cb)=>{
+			$.get(APIList.disable_all_security_measures, cb);
+		});
+	}
+	
 	static GetAPI(name) {
 		return APIList[name]+"?secret="+APISecret;
 	}
