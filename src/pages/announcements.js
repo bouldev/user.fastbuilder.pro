@@ -9,24 +9,7 @@ let announcementsPage={
 	announcements: [],
 	oninit: async()=>{
 		let announcements=await API.FetchAnnouncements();
-		if(Array.isArray(announcements)) {
-			announcementsPage.announcements=announcements;
-		}else{
-			while(announcements.is_2fa) {
-				let tfacode=await frame.getInput("双重验证", "您已启用双重验证，请输入您的 Google Authenticator (或任意密码器) 中显示的验证码", "验证码", false, false);
-				if(tfacode===false) {
-					await API.Logout();
-					m.route.set("/login");
-				}
-				let tfa_res=await API.FinishLogin2FA(tfacode);
-				if(!tfa_res.success) {
-					await frame.showAlert("错误", tfa_res.message);
-					continue;
-				}
-				announcementsPage.oninit();
-				return;
-			}
-		}
+		announcementsPage.announcements=announcements;
 		m.redraw();
 	},
 	view: (vnode)=>{

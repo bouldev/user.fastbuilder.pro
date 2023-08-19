@@ -394,12 +394,14 @@ let profilePage={
 					}
 				}, profilePage.bot_linkCode_displayOrdered?"隐藏链接口令":"显示链接口令")
 			),
-			/*m(frame.section, {title: "下载登录日志"},
-				m(frame.sectionGeneralText, "点击下方按钮以下载你的账户的登录日志。"),
+			m(frame.section, {title: "导出账号信息"},
+				m(frame.sectionGeneralText, "点击下方按钮以导出我们服务器上所有与你有关的信息。"),
 				m(frame.button, {
-					onclick:()=>{location.href="/api/v2/3/api.web?jump_to=download_account_log";}
-				}, "下载")
-			),*/
+					onclick:()=>{
+						window.open(`https://api.fastbuilder.pro/local/cgi/export_user_data?secret=${API.GetAPISecret()}`);
+					}
+				}, "导出")
+			),
 			/*m(frame.section, {title: "邮箱绑定"},
 				m(frame.sectionGeneralText, "绑定邮箱以便接收通知或找回密码。"),
 				profilePage.binded_mail?
