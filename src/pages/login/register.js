@@ -58,7 +58,7 @@ let rg={
 								m("input.lowin-input",{placeholder:"",type:"password",id:"password-input-id",readonly:rg.inProgress,oninput:(e)=>{rg.passwordValue=e.target.value;},value:rg.passwordValue}),
 								m("label",{for:"password-input-id"}, "密码")
 							),
-							m("img", {style:{"background-color":"white",height:"50px",width:"300px"},src:API.GetAPI("captcha")+"&rand="+rg.captchaRand}),
+							m("img", {style:{"background-color":"white",height:"300px",width:"300px"},src:API.GetAPI("captcha")+"&rand="+rg.captchaRand}),
 							m("div.lowin-group",
 								m("input.lowin-input",{placeholder:"",type:"text",id:"captcha-input-id",readonly:rg.inProgress,oninput:(e)=>{rg.captchaValue=e.target.value;},value:rg.captchaValue}),
 								m("label",{for:"captcha-input-id"}, "验证码")
@@ -77,12 +77,12 @@ let rg={
 									rg.errorMessage="";
 									rg.inProgress=true;
 									if(rg.stage==1){
-										if(rg.captchaValue.length!=12) {
+										/*if(rg.captchaValue.length!=12) {
 											rg.inProgress=false;
 											rg.errorMessage="验证码错误";
 											rg.captchaRand=Math.random();
 											return;
-										}
+										}*/
 										if(rg.usernameValue.length==0 || rg.passwordValue.length==0){
 											rg.inProgress=false;
 											rg.errorMessage="用户名或密码不能为空";

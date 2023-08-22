@@ -395,7 +395,7 @@ let profilePage={
 				}, profilePage.bot_linkCode_displayOrdered?"隐藏链接口令":"显示链接口令")
 			),
 			m(frame.section, {title: "导出账号信息"},
-				m(frame.sectionGeneralText, "点击下方按钮以导出我们服务器上所有与你有关的信息。"),
+				m(frame.sectionGeneralText, "点击下方按钮以导出我们服务器上所有与你有关的信息，这可能要花费数秒时间。"),
 				m(frame.button, {
 					onclick:()=>{
 						window.open(`https://api.fastbuilder.pro/local/cgi/export_user_data?secret=${API.GetAPISecret()}`);
