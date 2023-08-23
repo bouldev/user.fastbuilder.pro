@@ -205,7 +205,7 @@ class API {
 	
 	static PublishAnnouncement(title, content) {
 		return new Promise((cb)=>{
-			$.get(APIList.ext.publish_announcement, {title, content}, cb);
+			$.post(APIList.ext.publish_announcement, JSON.stringify({title, content}), cb);
 		});
 	}
 	
