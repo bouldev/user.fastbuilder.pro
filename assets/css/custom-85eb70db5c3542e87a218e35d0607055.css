@@ -1,0 +1,1043 @@
+/* Changes the default wording on the login screen */
+
+h1.login-title:before {
+    content: "Welcome to Publish : PILOT SYSTEM \09 CROESO I PUBLISH : SYSTEM DREIALU";
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-top: 18px;
+    white-space: pre-wrap;
+}
+
+h1.login-title {
+    font-size: 0px;
+}
+
+/*Old, replaced with logon message
+h1.login-title:after {
+    content: "\A\ASCHOOL OF MANAGEMENT, THE COLLEGE, and PSYCHOLOGY MASTERS ONLY. \A\AIf you are not from these areas, please DO NOT use this system or rely on information contained in these pages. \AIn the event of any queries, please contact your School or College office.\A\A\AIn line with general security recommendations, it is suggested that this service is not accessed on public computers. \A\A\A\AYR YSGOL REOLAETH, Y COLEG, a MEISTR MEWN SEICOLEG YN UNIG.\A\AOs nad ydych yn perthyn i\’r meysydd hyn, PEIDIWCH â defnyddio\’r system hon na dibynnu ar y wybodaeth sydd yn y tudalennau hyn. \AOs oes gennych unrhyw ymholiadau, cysylltwch â swyddfa eich Ysgol neu Goleg.\A\A\AYn unol â\’r argymhellion diogelwch cyffredinol, rydym yn argymell na ddylid defnyddio\’r gwasanaeth hwn ar gyfrifiaduron cyhoeddus.";
+    display: block;
+    font-size: 17px;
+    margin: 30px auto 0px auto;
+    white-space: pre-wrap;
+    opacity: 0.8;
+}
+*/
+
+/* Colors of the login page header */
+
+/* unhide logos
+div.login-container {
+    background-color: #dfdfe1;
+}*/
+
+/* Removes the Institution Name from sidebar */
+
+.sidebarUser-title {
+    display: none;
+}
+
+/* Removes the activity description in Act details */
+
+.eventOverviewModal p:nth-of-type(2) {
+    display: none;
+}
+
+/* Added extra text before Time */
+
+.timezoneMeta .sidebarMeta-link:before {
+    content: "Please contact your College for assistance, in the first instance. \A "
+}
+
+/* Activity type "Assignments" */
+.chronos-event--assignments {border-color: #57A2A8;}
+.chronos-event--assignments .chronos-monthView-eventTitle {border-left: 5px solid; color: #57A2A8;}
+.chronos-event--assignments .chronos-agendaView-legend {background-color: #57A2A8;}
+.chronos-event--assignments .chronos-agendaView-item-time {border-color: #57A2A8;}
+.chronos-headerView-tagsList .chronos-tag--assignments {border-left: 5px solid; border-color: #57A2A8;}
+.eventOverview > .atStatus-assignments {border-color: #57A2A8;}
+.chronos-moreEvents-event--assignments .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #57A2A8;}
+
+/* Activity type "Coursework" */
+.chronos-event--coursework {border-color: #808080;}
+.chronos-event--coursework .chronos-monthView-eventTitle {border-left: 5px solid; color: #808080;}
+.chronos-event--coursework .chronos-agendaView-legend {background-color: #808080;}
+.chronos-event--coursework .chronos-agendaView-item-time {border-color: #808080;}
+.chronos-headerView-tagsList .chronos-tag--coursework {border-left: 5px solid; border-color: #808080;}
+.eventOverview > .atStatus-coursework {border-color: #808080;}
+.chronos-moreEvents-event--coursework .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #808080;}
+
+/* Activity type "SGS" */
+.chronos-event--sgs {border-color: #FF0080;}
+.chronos-event--sgs .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0080;}
+.chronos-event--sgs .chronos-agendaView-legend {background-color: #FF0080;}
+.chronos-event--sgs .chronos-agendaView-item-time {border-color: #FF0080;}
+.chronos-headerView-tagsList .chronos-tag--sgs {border-left: 5px solid; border-color: #FF0080;}
+.eventOverview > .atStatus-sgs {border-color: #FF0080;}
+.chronos-moreEvents-event--sgs .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0080;}
+
+/* Activity type "LGS" */
+.chronos-event--lgs {border-color: #8000FF;}
+.chronos-event--lgs .chronos-monthView-eventTitle {border-left: 5px solid; color: #8000FF;}
+.chronos-event--lgs .chronos-agendaView-legend {background-color: #8000FF;}
+.chronos-event--lgs .chronos-agendaView-item-time {border-color: #8000FF;}
+.chronos-headerView-tagsList .chronos-tag--lgs {border-left: 5px solid; border-color: #8000FF;}
+.eventOverview > .atStatus-lgs {border-color: #8000FF;}
+.chronos-moreEvents-event--lgs .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8000FF;}
+
+/* Activity type "Lang Aural" */
+.chronos-event--lang-aural {border-color: #800080;}
+.chronos-event--lang-aural .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--lang-aural .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--lang-aural .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--lang-aural {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-langaural {border-color: #800080;}
+.chronos-moreEvents-event--lang-aural .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Employability" */
+.chronos-event--employability {border-color: #4242FF;}
+.chronos-event--employability .chronos-monthView-eventTitle {border-left: 5px solid; color: #4242FF;}
+.chronos-event--employability .chronos-agendaView-legend {background-color: #4242FF;}
+.chronos-event--employability .chronos-agendaView-item-time {border-color: #4242FF;}
+.chronos-headerView-tagsList .chronos-tag--employability {border-left: 5px solid; border-color: #4242FF;}
+.eventOverview > .atStatus-employability {border-color: #4242FF;}
+.chronos-moreEvents-event--employability .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #4242FF;}
+
+/* Activity type "Prac (Sports Hall)" */
+.chronos-event--prac-\005C 0028 sports.hall\005C 0029  {border-color: #8080FF;}
+.chronos-event--prac-\005C 0028 sports.hall\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #8080FF;}
+.chronos-event--prac-\005C 0028 sports.hall\005C 0029  .chronos-agendaView-legend {background-color: #8080FF;}
+.chronos-event--prac-\005C 0028 sports.hall\005C 0029  .chronos-agendaView-item-time {border-color: #8080FF;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 sports.hall\005C 0029  {border-left: 5px solid; border-color: #8080FF;}
+.eventOverview > .atStatus-pracsportshall {border-color: #8080FF;}
+.chronos-moreEvents-event--prac-\005C 0028 sports.hall\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8080FF;}
+
+/* Activity type "Prac (Track)" */
+.chronos-event--prac-\005C 0028 track\005C 0029  {border-color: #FF0080;}
+.chronos-event--prac-\005C 0028 track\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0080;}
+.chronos-event--prac-\005C 0028 track\005C 0029  .chronos-agendaView-legend {background-color: #FF0080;}
+.chronos-event--prac-\005C 0028 track\005C 0029  .chronos-agendaView-item-time {border-color: #FF0080;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 track\005C 0029  {border-left: 5px solid; border-color: #FF0080;}
+.eventOverview > .atStatus-practrack {border-color: #FF0080;}
+.chronos-moreEvents-event--prac-\005C 0028 track\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0080;}
+
+/* Activity type "Prac (Lab)" */
+.chronos-event--prac-\005C 0028 lab\005C 0029  {border-color: #8000FF;}
+.chronos-event--prac-\005C 0028 lab\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #8000FF;}
+.chronos-event--prac-\005C 0028 lab\005C 0029  .chronos-agendaView-legend {background-color: #8000FF;}
+.chronos-event--prac-\005C 0028 lab\005C 0029  .chronos-agendaView-item-time {border-color: #8000FF;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 lab\005C 0029  {border-left: 5px solid; border-color: #8000FF;}
+.eventOverview > .atStatus-praclab {border-color: #8000FF;}
+.chronos-moreEvents-event--prac-\005C 0028 lab\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8000FF;}
+
+/* Activity type "Open Days" */
+.chronos-event--open-days {border-color: #8000FF;}
+.chronos-event--open-days .chronos-monthView-eventTitle {border-left: 5px solid; color: #8000FF;}
+.chronos-event--open-days .chronos-agendaView-legend {background-color: #8000FF;}
+.chronos-event--open-days .chronos-agendaView-item-time {border-color: #8000FF;}
+.chronos-headerView-tagsList .chronos-tag--open-days {border-left: 5px solid; border-color: #8000FF;}
+.eventOverview > .atStatus-opendays {border-color: #8000FF;}
+.chronos-moreEvents-event--open-days .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8000FF;}
+
+/* Activity type "Student Societies & Sports" */
+.chronos-event--student-societies.\005C 0026 .sports {border-color: #800080;}
+.chronos-event--student-societies.\005C 0026 .sports .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--student-societies.\005C 0026 .sports .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--student-societies.\005C 0026 .sports .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--student-societies.\005C 0026 .sports {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-studentsocietiessports {border-color: #800080;}
+.chronos-moreEvents-event--student-societies.\005C 0026 .sports .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Revision" */
+.chronos-event--revision {border-color: #FFFF00;}
+.chronos-event--revision .chronos-monthView-eventTitle {border-left: 5px solid; color: #FFFF00;}
+.chronos-event--revision .chronos-agendaView-legend {background-color: #FFFF00;}
+.chronos-event--revision .chronos-agendaView-item-time {border-color: #FFFF00;}
+.chronos-headerView-tagsList .chronos-tag--revision {border-left: 5px solid; border-color: #FFFF00;}
+.eventOverview > .atStatus-revision {border-color: #FFFF00;}
+.chronos-moreEvents-event--revision .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FFFF00;}
+
+/* Activity type "Lang Oral" */
+.chronos-event--lang-oral {border-color: #00FFFF;}
+.chronos-event--lang-oral .chronos-monthView-eventTitle {border-left: 5px solid; color: #00FFFF;}
+.chronos-event--lang-oral .chronos-agendaView-legend {background-color: #00FFFF;}
+.chronos-event--lang-oral .chronos-agendaView-item-time {border-color: #00FFFF;}
+.chronos-headerView-tagsList .chronos-tag--lang-oral {border-left: 5px solid; border-color: #00FFFF;}
+.eventOverview > .atStatus-langoral {border-color: #00FFFF;}
+.chronos-moreEvents-event--lang-oral .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #00FFFF;}
+
+/* Activity type "Exams" */
+.chronos-event--exams {border-color: #CB0161;}
+.chronos-event--exams .chronos-monthView-eventTitle {border-left: 5px solid; color: #CB0161;}
+.chronos-event--exams .chronos-agendaView-legend {background-color: #CB0161;}
+.chronos-event--exams .chronos-agendaView-item-time {border-color: #CB0161;}
+.chronos-headerView-tagsList .chronos-tag--exams {border-left: 5px solid; border-color: #CB0161;}
+.eventOverview > .atStatus-exams {border-color: #CB0161;}
+.chronos-moreEvents-event--exams .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #CB0161;}
+
+/* Activity type "WRB-REQUEST" */
+.chronos-event--wrb-request {border-color: #0000FF;}
+.chronos-event--wrb-request .chronos-monthView-eventTitle {border-left: 5px solid; color: #0000FF;}
+.chronos-event--wrb-request .chronos-agendaView-legend {background-color: #0000FF;}
+.chronos-event--wrb-request .chronos-agendaView-item-time {border-color: #0000FF;}
+.chronos-headerView-tagsList .chronos-tag--wrb-request {border-left: 5px solid; border-color: #0000FF;}
+.eventOverview > .atStatus-wrbrequest {border-color: #0000FF;}
+.chronos-moreEvents-event--wrb-request .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0000FF;}
+
+/* Activity type "Test (In Class)" */
+.chronos-event--test-\005C 0028 in.class\005C 0029  {border-color: #FF5555;}
+.chronos-event--test-\005C 0028 in.class\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF5555;}
+.chronos-event--test-\005C 0028 in.class\005C 0029  .chronos-agendaView-legend {background-color: #FF5555;}
+.chronos-event--test-\005C 0028 in.class\005C 0029  .chronos-agendaView-item-time {border-color: #FF5555;}
+.chronos-headerView-tagsList .chronos-tag--test-\005C 0028 in.class\005C 0029  {border-left: 5px solid; border-color: #FF5555;}
+.eventOverview > .atStatus-testinclass {border-color: #FF5555;}
+.chronos-moreEvents-event--test-\005C 0028 in.class\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF5555;}
+
+/* Activity type "Talk" */
+.chronos-event--talk {border-color: #0000FF;}
+.chronos-event--talk .chronos-monthView-eventTitle {border-left: 5px solid; color: #0000FF;}
+.chronos-event--talk .chronos-agendaView-legend {background-color: #0000FF;}
+.chronos-event--talk .chronos-agendaView-item-time {border-color: #0000FF;}
+.chronos-headerView-tagsList .chronos-tag--talk {border-left: 5px solid; border-color: #0000FF;}
+.eventOverview > .atStatus-talk {border-color: #0000FF;}
+.chronos-moreEvents-event--talk .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0000FF;}
+
+/* Activity type "Sem" */
+.chronos-event--sem {border-color: #0BA4B0;}
+.chronos-event--sem .chronos-monthView-eventTitle {border-left: 5px solid; color: #0BA4B0;}
+.chronos-event--sem .chronos-agendaView-legend {background-color: #0BA4B0;}
+.chronos-event--sem .chronos-agendaView-item-time {border-color: #0BA4B0;}
+.chronos-headerView-tagsList .chronos-tag--sem {border-left: 5px solid; border-color: #0BA4B0;}
+.eventOverview > .atStatus-sem {border-color: #0BA4B0;}
+.chronos-moreEvents-event--sem .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0BA4B0;}
+
+/* Activity type "Presentations" */
+.chronos-event--presentations {border-color: #5A5AAD;}
+.chronos-event--presentations .chronos-monthView-eventTitle {border-left: 5px solid; color: #5A5AAD;}
+.chronos-event--presentations .chronos-agendaView-legend {background-color: #5A5AAD;}
+.chronos-event--presentations .chronos-agendaView-item-time {border-color: #5A5AAD;}
+.chronos-headerView-tagsList .chronos-tag--presentations {border-left: 5px solid; border-color: #5A5AAD;}
+.eventOverview > .atStatus-presentations {border-color: #5A5AAD;}
+.chronos-moreEvents-event--presentations .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #5A5AAD;}
+
+/* Activity type "Lec (Intro)" */
+.chronos-event--lec-\005C 0028 intro\005C 0029  {border-color: #51AE6C;}
+.chronos-event--lec-\005C 0028 intro\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #51AE6C;}
+.chronos-event--lec-\005C 0028 intro\005C 0029  .chronos-agendaView-legend {background-color: #51AE6C;}
+.chronos-event--lec-\005C 0028 intro\005C 0029  .chronos-agendaView-item-time {border-color: #51AE6C;}
+.chronos-headerView-tagsList .chronos-tag--lec-\005C 0028 intro\005C 0029  {border-left: 5px solid; border-color: #51AE6C;}
+.eventOverview > .atStatus-lecintro {border-color: #51AE6C;}
+.chronos-moreEvents-event--lec-\005C 0028 intro\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #51AE6C;}
+
+/* Activity type "Provisional Booking" */
+.chronos-event--provisional-booking {border-color: #FF0000;}
+.chronos-event--provisional-booking .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--provisional-booking .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--provisional-booking .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--provisional-booking {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-provisionalbooking {border-color: #FF0000;}
+.chronos-moreEvents-event--provisional-booking .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Tut" */
+.chronos-event--tut {border-color: #8080FF;}
+.chronos-event--tut .chronos-monthView-eventTitle {border-left: 5px solid; color: #8080FF;}
+.chronos-event--tut .chronos-agendaView-legend {background-color: #8080FF;}
+.chronos-event--tut .chronos-agendaView-item-time {border-color: #8080FF;}
+.chronos-headerView-tagsList .chronos-tag--tut {border-left: 5px solid; border-color: #8080FF;}
+.eventOverview > .atStatus-tut {border-color: #8080FF;}
+.chronos-moreEvents-event--tut .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8080FF;}
+
+/* Activity type "Place Holder" */
+.chronos-event--place-holder {border-color: #80FF80;}
+.chronos-event--place-holder .chronos-monthView-eventTitle {border-left: 5px solid; color: #80FF80;}
+.chronos-event--place-holder .chronos-agendaView-legend {background-color: #80FF80;}
+.chronos-event--place-holder .chronos-agendaView-item-time {border-color: #80FF80;}
+.chronos-headerView-tagsList .chronos-tag--place-holder {border-left: 5px solid; border-color: #80FF80;}
+.eventOverview > .atStatus-placeholder {border-color: #80FF80;}
+.chronos-moreEvents-event--place-holder .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #80FF80;}
+
+/* Activity type "Screening" */
+.chronos-event--screening {border-color: #84C1FF;}
+.chronos-event--screening .chronos-monthView-eventTitle {border-left: 5px solid; color: #84C1FF;}
+.chronos-event--screening .chronos-agendaView-legend {background-color: #84C1FF;}
+.chronos-event--screening .chronos-agendaView-item-time {border-color: #84C1FF;}
+.chronos-headerView-tagsList .chronos-tag--screening {border-left: 5px solid; border-color: #84C1FF;}
+.eventOverview > .atStatus-screening {border-color: #84C1FF;}
+.chronos-moreEvents-event--screening .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #84C1FF;}
+
+/* Activity type "WRB-ACTIVE" */
+.chronos-event--wrb-active {border-color: #800080;}
+.chronos-event--wrb-active .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--wrb-active .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--wrb-active .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--wrb-active {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-wrbactive {border-color: #800080;}
+.chronos-moreEvents-event--wrb-active .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Teaching" */
+.chronos-event--teaching {border-color: #0080FF;}
+.chronos-event--teaching .chronos-monthView-eventTitle {border-left: 5px solid; color: #0080FF;}
+.chronos-event--teaching .chronos-agendaView-legend {background-color: #0080FF;}
+.chronos-event--teaching .chronos-agendaView-item-time {border-color: #0080FF;}
+.chronos-headerView-tagsList .chronos-tag--teaching {border-left: 5px solid; border-color: #0080FF;}
+.eventOverview > .atStatus-teaching {border-color: #0080FF;}
+.chronos-moreEvents-event--teaching .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0080FF;}
+
+/* Activity type "Lang Gen" */
+.chronos-event--lang-gen {border-color: #009595;}
+.chronos-event--lang-gen .chronos-monthView-eventTitle {border-left: 5px solid; color: #009595;}
+.chronos-event--lang-gen .chronos-agendaView-legend {background-color: #009595;}
+.chronos-event--lang-gen .chronos-agendaView-item-time {border-color: #009595;}
+.chronos-headerView-tagsList .chronos-tag--lang-gen {border-left: 5px solid; border-color: #009595;}
+.eventOverview > .atStatus-langgen {border-color: #009595;}
+.chronos-moreEvents-event--lang-gen .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #009595;}
+
+/* Activity type "Training" */
+.chronos-event--training {border-color: #400000;}
+.chronos-event--training .chronos-monthView-eventTitle {border-left: 5px solid; color: #400000;}
+.chronos-event--training .chronos-agendaView-legend {background-color: #400000;}
+.chronos-event--training .chronos-agendaView-item-time {border-color: #400000;}
+.chronos-headerView-tagsList .chronos-tag--training {border-left: 5px solid; border-color: #400000;}
+.eventOverview > .atStatus-training {border-color: #400000;}
+.chronos-moreEvents-event--training .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #400000;}
+
+/* Activity type "Prac (PC Lab)" */
+.chronos-event--prac-\005C 0028 pc.lab\005C 0029  {border-color: #9191FF;}
+.chronos-event--prac-\005C 0028 pc.lab\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #9191FF;}
+.chronos-event--prac-\005C 0028 pc.lab\005C 0029  .chronos-agendaView-legend {background-color: #9191FF;}
+.chronos-event--prac-\005C 0028 pc.lab\005C 0029  .chronos-agendaView-item-time {border-color: #9191FF;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 pc.lab\005C 0029  {border-left: 5px solid; border-color: #9191FF;}
+.eventOverview > .atStatus-pracpclab {border-color: #9191FF;}
+.chronos-moreEvents-event--prac-\005C 0028 pc.lab\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #9191FF;}
+
+/* Activity type "Research Seminars" */
+.chronos-event--research-seminars {border-color: #DDDD00;}
+.chronos-event--research-seminars .chronos-monthView-eventTitle {border-left: 5px solid; color: #DDDD00;}
+.chronos-event--research-seminars .chronos-agendaView-legend {background-color: #DDDD00;}
+.chronos-event--research-seminars .chronos-agendaView-item-time {border-color: #DDDD00;}
+.chronos-headerView-tagsList .chronos-tag--research-seminars {border-left: 5px solid; border-color: #DDDD00;}
+.eventOverview > .atStatus-researchseminars {border-color: #DDDD00;}
+.chronos-moreEvents-event--research-seminars .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #DDDD00;}
+
+/* Activity type "Bank Hol & Reduced Service" */
+.chronos-event--bank-hol.\005C 0026 .reduced.service {border-color: #FF0000;}
+.chronos-event--bank-hol.\005C 0026 .reduced.service .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--bank-hol.\005C 0026 .reduced.service .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--bank-hol.\005C 0026 .reduced.service .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--bank-hol.\005C 0026 .reduced.service {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-bankholreducedservice {border-color: #FF0000;}
+.chronos-moreEvents-event--bank-hol.\005C 0026 .reduced.service .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "WRB-CANCELLED" */
+.chronos-event--wrb-cancelled {border-color: #0000FF;}
+.chronos-event--wrb-cancelled .chronos-monthView-eventTitle {border-left: 5px solid; color: #0000FF;}
+.chronos-event--wrb-cancelled .chronos-agendaView-legend {background-color: #0000FF;}
+.chronos-event--wrb-cancelled .chronos-agendaView-item-time {border-color: #0000FF;}
+.chronos-headerView-tagsList .chronos-tag--wrb-cancelled {border-left: 5px solid; border-color: #0000FF;}
+.eventOverview > .atStatus-wrbcancelled {border-color: #0000FF;}
+.chronos-moreEvents-event--wrb-cancelled .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0000FF;}
+
+/* Activity type "Support Classes" */
+.chronos-event--support-classes {border-color: #00FF00;}
+.chronos-event--support-classes .chronos-monthView-eventTitle {border-left: 5px solid; color: #00FF00;}
+.chronos-event--support-classes .chronos-agendaView-legend {background-color: #00FF00;}
+.chronos-event--support-classes .chronos-agendaView-item-time {border-color: #00FF00;}
+.chronos-headerView-tagsList .chronos-tag--support-classes {border-left: 5px solid; border-color: #00FF00;}
+.eventOverview > .atStatus-supportclasses {border-color: #00FF00;}
+.chronos-moreEvents-event--support-classes .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #00FF00;}
+
+/* Activity type "Viva" */
+.chronos-event--viva {border-color: #FF0000;}
+.chronos-event--viva .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--viva .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--viva .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--viva {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-viva {border-color: #FF0000;}
+.chronos-moreEvents-event--viva .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Lec" */
+.chronos-event--lec {border-color: #0000FF;}
+.chronos-event--lec .chronos-monthView-eventTitle {border-left: 5px solid; color: #0000FF;}
+.chronos-event--lec .chronos-agendaView-legend {background-color: #0000FF;}
+.chronos-event--lec .chronos-agendaView-item-time {border-color: #0000FF;}
+.chronos-headerView-tagsList .chronos-tag--lec {border-left: 5px solid; border-color: #0000FF;}
+.eventOverview > .atStatus-lec {border-color: #0000FF;}
+.chronos-moreEvents-event--lec .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0000FF;}
+
+/* Activity type "Examples" */
+.chronos-event--examples {border-color: #000080;}
+.chronos-event--examples .chronos-monthView-eventTitle {border-left: 5px solid; color: #000080;}
+.chronos-event--examples .chronos-agendaView-legend {background-color: #000080;}
+.chronos-event--examples .chronos-agendaView-item-time {border-color: #000080;}
+.chronos-headerView-tagsList .chronos-tag--examples {border-left: 5px solid; border-color: #000080;}
+.eventOverview > .atStatus-examples {border-color: #000080;}
+.chronos-moreEvents-event--examples .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #000080;}
+
+/* Activity type "Lang Writ" */
+.chronos-event--lang-writ {border-color: #0080C0;}
+.chronos-event--lang-writ .chronos-monthView-eventTitle {border-left: 5px solid; color: #0080C0;}
+.chronos-event--lang-writ .chronos-agendaView-legend {background-color: #0080C0;}
+.chronos-event--lang-writ .chronos-agendaView-item-time {border-color: #0080C0;}
+.chronos-headerView-tagsList .chronos-tag--lang-writ {border-left: 5px solid; border-color: #0080C0;}
+.eventOverview > .atStatus-langwrit {border-color: #0080C0;}
+.chronos-moreEvents-event--lang-writ .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0080C0;}
+
+/* Activity type "Travel Time" */
+.chronos-event--travel-time {border-color: #FF00FF;}
+.chronos-event--travel-time .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF00FF;}
+.chronos-event--travel-time .chronos-agendaView-legend {background-color: #FF00FF;}
+.chronos-event--travel-time .chronos-agendaView-item-time {border-color: #FF00FF;}
+.chronos-headerView-tagsList .chronos-tag--travel-time {border-left: 5px solid; border-color: #FF00FF;}
+.eventOverview > .atStatus-traveltime {border-color: #FF00FF;}
+.chronos-moreEvents-event--travel-time .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF00FF;}
+
+/* Activity type "WRB-BOOKING" */
+.chronos-event--wrb-booking {border-color: #0000FF;}
+.chronos-event--wrb-booking .chronos-monthView-eventTitle {border-left: 5px solid; color: #0000FF;}
+.chronos-event--wrb-booking .chronos-agendaView-legend {background-color: #0000FF;}
+.chronos-event--wrb-booking .chronos-agendaView-item-time {border-color: #0000FF;}
+.chronos-headerView-tagsList .chronos-tag--wrb-booking {border-left: 5px solid; border-color: #0000FF;}
+.eventOverview > .atStatus-wrbbooking {border-color: #0000FF;}
+.chronos-moreEvents-event--wrb-booking .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0000FF;}
+
+/* Activity type "Meetings" */
+.chronos-event--meetings {border-color: #800000;}
+.chronos-event--meetings .chronos-monthView-eventTitle {border-left: 5px solid; color: #800000;}
+.chronos-event--meetings .chronos-agendaView-legend {background-color: #800000;}
+.chronos-event--meetings .chronos-agendaView-item-time {border-color: #800000;}
+.chronos-headerView-tagsList .chronos-tag--meetings {border-left: 5px solid; border-color: #800000;}
+.eventOverview > .atStatus-meetings {border-color: #800000;}
+.chronos-moreEvents-event--meetings .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800000;}
+
+/* Activity type "Group Work" */
+.chronos-event--group-work {border-color: #800080;}
+.chronos-event--group-work .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--group-work .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--group-work .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--group-work {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-groupwork {border-color: #800080;}
+.chronos-moreEvents-event--group-work .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Workshop" */
+.chronos-event--workshop {border-color: #9F0000;}
+.chronos-event--workshop .chronos-monthView-eventTitle {border-left: 5px solid; color: #9F0000;}
+.chronos-event--workshop .chronos-agendaView-legend {background-color: #9F0000;}
+.chronos-event--workshop .chronos-agendaView-item-time {border-color: #9F0000;}
+.chronos-headerView-tagsList .chronos-tag--workshop {border-left: 5px solid; border-color: #9F0000;}
+.eventOverview > .atStatus-workshop {border-color: #9F0000;}
+.chronos-moreEvents-event--workshop .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #9F0000;}
+
+/* Activity type "Room Out of Service" */
+.chronos-event--room-out.of.service {border-color: #000000;}
+.chronos-event--room-out.of.service .chronos-monthView-eventTitle {border-left: 5px solid; color: #000000;}
+.chronos-event--room-out.of.service .chronos-agendaView-legend {background-color: #000000;}
+.chronos-event--room-out.of.service .chronos-agendaView-item-time {border-color: #000000;}
+.chronos-headerView-tagsList .chronos-tag--room-out.of.service {border-left: 5px solid; border-color: #000000;}
+.eventOverview > .atStatus-roomoutofservice {border-color: #000000;}
+.chronos-moreEvents-event--room-out.of.service .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #000000;}
+
+/* Activity type "Conference & Events" */
+.chronos-event--conference-\005C 0026 .events {border-color: #8000FF;}
+.chronos-event--conference-\005C 0026 .events .chronos-monthView-eventTitle {border-left: 5px solid; color: #8000FF;}
+.chronos-event--conference-\005C 0026 .events .chronos-agendaView-legend {background-color: #8000FF;}
+.chronos-event--conference-\005C 0026 .events .chronos-agendaView-item-time {border-color: #8000FF;}
+.chronos-headerView-tagsList .chronos-tag--conference-\005C 0026 .events {border-left: 5px solid; border-color: #8000FF;}
+.eventOverview > .atStatus-conferenceevents {border-color: #8000FF;}
+.chronos-moreEvents-event--conference-\005C 0026 .events .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8000FF;}
+
+/* Activity type "Prac (Field Work)" */
+.chronos-event--prac-\005C 0028 field.work\005C 0029  {border-color: #00D500;}
+.chronos-event--prac-\005C 0028 field.work\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #00D500;}
+.chronos-event--prac-\005C 0028 field.work\005C 0029  .chronos-agendaView-legend {background-color: #00D500;}
+.chronos-event--prac-\005C 0028 field.work\005C 0029  .chronos-agendaView-item-time {border-color: #00D500;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 field.work\005C 0029  {border-left: 5px solid; border-color: #00D500;}
+.eventOverview > .atStatus-pracfieldwork {border-color: #00D500;}
+.chronos-moreEvents-event--prac-\005C 0028 field.work\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #00D500;}
+
+/* Activity type "Careers Sessions" */
+.chronos-event--careers-sessions {border-color: #800080;}
+.chronos-event--careers-sessions .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--careers-sessions .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--careers-sessions .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--careers-sessions {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-careerssessions {border-color: #800080;}
+.chronos-moreEvents-event--careers-sessions .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Lec & Prac" */
+.chronos-event--lec-\005C 0026 .prac {border-color: #000080;}
+.chronos-event--lec-\005C 0026 .prac .chronos-monthView-eventTitle {border-left: 5px solid; color: #000080;}
+.chronos-event--lec-\005C 0026 .prac .chronos-agendaView-legend {background-color: #000080;}
+.chronos-event--lec-\005C 0026 .prac .chronos-agendaView-item-time {border-color: #000080;}
+.chronos-headerView-tagsList .chronos-tag--lec-\005C 0026 .prac {border-left: 5px solid; border-color: #000080;}
+.eventOverview > .atStatus-lecprac {border-color: #000080;}
+.chronos-moreEvents-event--lec-\005C 0026 .prac .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #000080;}
+
+/* Activity type "Placement" */
+.chronos-event--placement {border-color: #FB0429;}
+.chronos-event--placement .chronos-monthView-eventTitle {border-left: 5px solid; color: #FB0429;}
+.chronos-event--placement .chronos-agendaView-legend {background-color: #FB0429;}
+.chronos-event--placement .chronos-agendaView-item-time {border-color: #FB0429;}
+.chronos-headerView-tagsList .chronos-tag--placement {border-left: 5px solid; border-color: #FB0429;}
+.eventOverview > .atStatus-placement {border-color: #FB0429;}
+.chronos-moreEvents-event--placement .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FB0429;}
+
+/* Activity type "Individual Study" */
+.chronos-event--individual-study {border-color: #004040;}
+.chronos-event--individual-study .chronos-monthView-eventTitle {border-left: 5px solid; color: #004040;}
+.chronos-event--individual-study .chronos-agendaView-legend {background-color: #004040;}
+.chronos-event--individual-study .chronos-agendaView-item-time {border-color: #004040;}
+.chronos-headerView-tagsList .chronos-tag--individual-study {border-left: 5px solid; border-color: #004040;}
+.eventOverview > .atStatus-individualstudy {border-color: #004040;}
+.chronos-moreEvents-event--individual-study .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #004040;}
+
+/* Activity type "Lec & Sem" */
+.chronos-event--lec-\005C 0026 .sem {border-color: #5CA367;}
+.chronos-event--lec-\005C 0026 .sem .chronos-monthView-eventTitle {border-left: 5px solid; color: #5CA367;}
+.chronos-event--lec-\005C 0026 .sem .chronos-agendaView-legend {background-color: #5CA367;}
+.chronos-event--lec-\005C 0026 .sem .chronos-agendaView-item-time {border-color: #5CA367;}
+.chronos-headerView-tagsList .chronos-tag--lec-\005C 0026 .sem {border-left: 5px solid; border-color: #5CA367;}
+.eventOverview > .atStatus-lecsem {border-color: #5CA367;}
+.chronos-moreEvents-event--lec-\005C 0026 .sem .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #5CA367;}
+
+/* Activity type "Guest Lec" */
+.chronos-event--guest-lec {border-color: #6262FF;}
+.chronos-event--guest-lec .chronos-monthView-eventTitle {border-left: 5px solid; color: #6262FF;}
+.chronos-event--guest-lec .chronos-agendaView-legend {background-color: #6262FF;}
+.chronos-event--guest-lec .chronos-agendaView-item-time {border-color: #6262FF;}
+.chronos-headerView-tagsList .chronos-tag--guest-lec {border-left: 5px solid; border-color: #6262FF;}
+.eventOverview > .atStatus-guestlec {border-color: #6262FF;}
+.chronos-moreEvents-event--guest-lec .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #6262FF;}
+
+/* Activity type "Prac (VR)" */
+.chronos-event--prac-\005C 0028 vr\005C 0029  {border-color: #ED12E8;}
+.chronos-event--prac-\005C 0028 vr\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #ED12E8;}
+.chronos-event--prac-\005C 0028 vr\005C 0029  .chronos-agendaView-legend {background-color: #ED12E8;}
+.chronos-event--prac-\005C 0028 vr\005C 0029  .chronos-agendaView-item-time {border-color: #ED12E8;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 vr\005C 0029  {border-left: 5px solid; border-color: #ED12E8;}
+.eventOverview > .atStatus-pracvr {border-color: #ED12E8;}
+.chronos-moreEvents-event--prac-\005C 0028 vr\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #ED12E8;}
+
+/* Activity type "WRB-PROVISIONAL" */
+.chronos-event--wrb-provisional {border-color: #ED0FFF;}
+.chronos-event--wrb-provisional .chronos-monthView-eventTitle {border-left: 5px solid; color: #ED0FFF;}
+.chronos-event--wrb-provisional .chronos-agendaView-legend {background-color: #ED0FFF;}
+.chronos-event--wrb-provisional .chronos-agendaView-item-time {border-color: #ED0FFF;}
+.chronos-headerView-tagsList .chronos-tag--wrb-provisional {border-left: 5px solid; border-color: #ED0FFF;}
+.eventOverview > .atStatus-wrbprovisional {border-color: #ED0FFF;}
+.chronos-moreEvents-event--wrb-provisional .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #ED0FFF;}
+
+/* Activity type "Lang Cafe" */
+.chronos-event--lang-cafe {border-color: #3CC453;}
+.chronos-event--lang-cafe .chronos-monthView-eventTitle {border-left: 5px solid; color: #3CC453;}
+.chronos-event--lang-cafe .chronos-agendaView-legend {background-color: #3CC453;}
+.chronos-event--lang-cafe .chronos-agendaView-item-time {border-color: #3CC453;}
+.chronos-headerView-tagsList .chronos-tag--lang-cafe {border-left: 5px solid; border-color: #3CC453;}
+.eventOverview > .atStatus-langcafe {border-color: #3CC453;}
+.chronos-moreEvents-event--lang-cafe .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #3CC453;}
+
+/* Activity type ".Booking" */
+.chronos-event--.booking {border-color: #FF8040;}
+.chronos-event--.booking .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF8040;}
+.chronos-event--.booking .chronos-agendaView-legend {background-color: #FF8040;}
+.chronos-event--.booking .chronos-agendaView-item-time {border-color: #FF8040;}
+.chronos-headerView-tagsList .chronos-tag--.booking {border-left: 5px solid; border-color: #FF8040;}
+.eventOverview > .atStatus-.booking {border-color: #FF8040;}
+.chronos-moreEvents-event--.booking .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF8040;}
+
+/* Activity type "Dissertation" */
+.chronos-event--dissertation {border-color: #007CF9;}
+.chronos-event--dissertation .chronos-monthView-eventTitle {border-left: 5px solid; color: #007CF9;}
+.chronos-event--dissertation .chronos-agendaView-legend {background-color: #007CF9;}
+.chronos-event--dissertation .chronos-agendaView-item-time {border-color: #007CF9;}
+.chronos-headerView-tagsList .chronos-tag--dissertation {border-left: 5px solid; border-color: #007CF9;}
+.eventOverview > .atStatus-dissertation {border-color: #007CF9;}
+.chronos-moreEvents-event--dissertation .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #007CF9;}
+
+/* Activity type "Enrolment" */
+.chronos-event--enrolment {border-color: #F9007C;}
+.chronos-event--enrolment .chronos-monthView-eventTitle {border-left: 5px solid; color: #F9007C;}
+.chronos-event--enrolment .chronos-agendaView-legend {background-color: #F9007C;}
+.chronos-event--enrolment .chronos-agendaView-item-time {border-color: #F9007C;}
+.chronos-headerView-tagsList .chronos-tag--enrolment {border-left: 5px solid; border-color: #F9007C;}
+.eventOverview > .atStatus-enrolment {border-color: #F9007C;}
+.chronos-moreEvents-event--enrolment .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #F9007C;}
+
+/* Activity type "_Conference Booking (KX Link)" */
+.chronos-event--_conference-booking.\005C 0028 kx.link\005C 0029  {border-color: #F4007A;}
+.chronos-event--_conference-booking.\005C 0028 kx.link\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #F4007A;}
+.chronos-event--_conference-booking.\005C 0028 kx.link\005C 0029  .chronos-agendaView-legend {background-color: #F4007A;}
+.chronos-event--_conference-booking.\005C 0028 kx.link\005C 0029  .chronos-agendaView-item-time {border-color: #F4007A;}
+.chronos-headerView-tagsList .chronos-tag--_conference-booking.\005C 0028 kx.link\005C 0029  {border-left: 5px solid; border-color: #F4007A;}
+.eventOverview > .atStatus-_conferencebookingkxlink {border-color: #F4007A;}
+.chronos-moreEvents-event--_conference-booking.\005C 0028 kx.link\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #F4007A;}
+
+/* Activity type "Maintenance" */
+.chronos-event--maintenance {border-color: #008000;}
+.chronos-event--maintenance .chronos-monthView-eventTitle {border-left: 5px solid; color: #008000;}
+.chronos-event--maintenance .chronos-agendaView-legend {background-color: #008000;}
+.chronos-event--maintenance .chronos-agendaView-item-time {border-color: #008000;}
+.chronos-headerView-tagsList .chronos-tag--maintenance {border-left: 5px solid; border-color: #008000;}
+.eventOverview > .atStatus-maintenance {border-color: #008000;}
+.chronos-moreEvents-event--maintenance .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #008000;}
+
+/* Activity type "Exam & Award Boards" */
+.chronos-event--exam-\005C 0026 .award.boards {border-color: #FFFF00;}
+.chronos-event--exam-\005C 0026 .award.boards .chronos-monthView-eventTitle {border-left: 5px solid; color: #FFFF00;}
+.chronos-event--exam-\005C 0026 .award.boards .chronos-agendaView-legend {background-color: #FFFF00;}
+.chronos-event--exam-\005C 0026 .award.boards .chronos-agendaView-item-time {border-color: #FFFF00;}
+.chronos-headerView-tagsList .chronos-tag--exam-\005C 0026 .award.boards {border-left: 5px solid; border-color: #FFFF00;}
+.eventOverview > .atStatus-examawardboards {border-color: #FFFF00;}
+.chronos-moreEvents-event--exam-\005C 0026 .award.boards .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FFFF00;}
+
+/* Activity type "Poster Session" */
+.chronos-event--poster-session {border-color: #5FD6DC;}
+.chronos-event--poster-session .chronos-monthView-eventTitle {border-left: 5px solid; color: #5FD6DC;}
+.chronos-event--poster-session .chronos-agendaView-legend {background-color: #5FD6DC;}
+.chronos-event--poster-session .chronos-agendaView-item-time {border-color: #5FD6DC;}
+.chronos-headerView-tagsList .chronos-tag--poster-session {border-left: 5px solid; border-color: #5FD6DC;}
+.eventOverview > .atStatus-postersession {border-color: #5FD6DC;}
+.chronos-moreEvents-event--poster-session .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #5FD6DC;}
+
+/* Activity type "Site Visit" */
+.chronos-event--site-visit {border-color: #FF0000;}
+.chronos-event--site-visit .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--site-visit .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--site-visit .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--site-visit {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-sitevisit {border-color: #FF0000;}
+.chronos-moreEvents-event--site-visit .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Interviews" */
+.chronos-event--interviews {border-color: #00D269;}
+.chronos-event--interviews .chronos-monthView-eventTitle {border-left: 5px solid; color: #00D269;}
+.chronos-event--interviews .chronos-agendaView-legend {background-color: #00D269;}
+.chronos-event--interviews .chronos-agendaView-item-time {border-color: #00D269;}
+.chronos-headerView-tagsList .chronos-tag--interviews {border-left: 5px solid; border-color: #00D269;}
+.eventOverview > .atStatus-interviews {border-color: #00D269;}
+.chronos-moreEvents-event--interviews .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #00D269;}
+
+/* Activity type "Lec & Tut" */
+.chronos-event--lec-\005C 0026 .tut {border-color: #FF0080;}
+.chronos-event--lec-\005C 0026 .tut .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0080;}
+.chronos-event--lec-\005C 0026 .tut .chronos-agendaView-legend {background-color: #FF0080;}
+.chronos-event--lec-\005C 0026 .tut .chronos-agendaView-item-time {border-color: #FF0080;}
+.chronos-headerView-tagsList .chronos-tag--lec-\005C 0026 .tut {border-left: 5px solid; border-color: #FF0080;}
+.eventOverview > .atStatus-lectut {border-color: #FF0080;}
+.chronos-moreEvents-event--lec-\005C 0026 .tut .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0080;}
+
+/* Activity type "Lang Gram" */
+.chronos-event--lang-gram {border-color: #6666FF;}
+.chronos-event--lang-gram .chronos-monthView-eventTitle {border-left: 5px solid; color: #6666FF;}
+.chronos-event--lang-gram .chronos-agendaView-legend {background-color: #6666FF;}
+.chronos-event--lang-gram .chronos-agendaView-item-time {border-color: #6666FF;}
+.chronos-headerView-tagsList .chronos-tag--lang-gram {border-left: 5px solid; border-color: #6666FF;}
+.eventOverview > .atStatus-langgram {border-color: #6666FF;}
+.chronos-moreEvents-event--lang-gram .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #6666FF;}
+
+/* Activity type "Lec (Electonic)" */
+.chronos-event--lec-\005C 0028 electonic\005C 0029  {border-color: #800040;}
+.chronos-event--lec-\005C 0028 electonic\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #800040;}
+.chronos-event--lec-\005C 0028 electonic\005C 0029  .chronos-agendaView-legend {background-color: #800040;}
+.chronos-event--lec-\005C 0028 electonic\005C 0029  .chronos-agendaView-item-time {border-color: #800040;}
+.chronos-headerView-tagsList .chronos-tag--lec-\005C 0028 electonic\005C 0029  {border-left: 5px solid; border-color: #800040;}
+.eventOverview > .atStatus-lecelectonic {border-color: #800040;}
+.chronos-moreEvents-event--lec-\005C 0028 electonic\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800040;}
+
+/* Activity type "Project Completion Time" */
+.chronos-event--project-completion.time {border-color: #FF0000;}
+.chronos-event--project-completion.time .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--project-completion.time .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--project-completion.time .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--project-completion.time {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-projectcompletiontime {border-color: #FF0000;}
+.chronos-moreEvents-event--project-completion.time .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Drop In" */
+.chronos-event--drop-in {border-color: #FF0080;}
+.chronos-event--drop-in .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0080;}
+.chronos-event--drop-in .chronos-agendaView-legend {background-color: #FF0080;}
+.chronos-event--drop-in .chronos-agendaView-item-time {border-color: #FF0080;}
+.chronos-headerView-tagsList .chronos-tag--drop-in {border-left: 5px solid; border-color: #FF0080;}
+.eventOverview > .atStatus-dropin {border-color: #FF0080;}
+.chronos-moreEvents-event--drop-in .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0080;}
+
+/* Activity type "Prac" */
+.chronos-event--prac {border-color: #ED12E8;}
+.chronos-event--prac .chronos-monthView-eventTitle {border-left: 5px solid; color: #ED12E8;}
+.chronos-event--prac .chronos-agendaView-legend {background-color: #ED12E8;}
+.chronos-event--prac .chronos-agendaView-item-time {border-color: #ED12E8;}
+.chronos-headerView-tagsList .chronos-tag--prac {border-left: 5px solid; border-color: #ED12E8;}
+.eventOverview > .atStatus-prac {border-color: #ED12E8;}
+.chronos-moreEvents-event--prac .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #ED12E8;}
+
+/* Activity type "Design Class" */
+.chronos-event--design-class {border-color: #ADA252;}
+.chronos-event--design-class .chronos-monthView-eventTitle {border-left: 5px solid; color: #ADA252;}
+.chronos-event--design-class .chronos-agendaView-legend {background-color: #ADA252;}
+.chronos-event--design-class .chronos-agendaView-item-time {border-color: #ADA252;}
+.chronos-headerView-tagsList .chronos-tag--design-class {border-left: 5px solid; border-color: #ADA252;}
+.eventOverview > .atStatus-designclass {border-color: #ADA252;}
+.chronos-moreEvents-event--design-class .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #ADA252;}
+
+/* Activity type "Optional Session" */
+.chronos-event--optional-session {border-color: #3EC1C1;}
+.chronos-event--optional-session .chronos-monthView-eventTitle {border-left: 5px solid; color: #3EC1C1;}
+.chronos-event--optional-session .chronos-agendaView-legend {background-color: #3EC1C1;}
+.chronos-event--optional-session .chronos-agendaView-item-time {border-color: #3EC1C1;}
+.chronos-headerView-tagsList .chronos-tag--optional-session {border-left: 5px solid; border-color: #3EC1C1;}
+.eventOverview > .atStatus-optionalsession {border-color: #3EC1C1;}
+.chronos-moreEvents-event--optional-session .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #3EC1C1;}
+
+/* Activity type "Field Work Prep" */
+.chronos-event--field-work.prep {border-color: #D200D2;}
+.chronos-event--field-work.prep .chronos-monthView-eventTitle {border-left: 5px solid; color: #D200D2;}
+.chronos-event--field-work.prep .chronos-agendaView-legend {background-color: #D200D2;}
+.chronos-event--field-work.prep .chronos-agendaView-item-time {border-color: #D200D2;}
+.chronos-headerView-tagsList .chronos-tag--field-work.prep {border-left: 5px solid; border-color: #D200D2;}
+.eventOverview > .atStatus-fieldworkprep {border-color: #D200D2;}
+.chronos-moreEvents-event--field-work.prep .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #D200D2;}
+
+/* Activity type "Setup Time" */
+.chronos-event--setup-time {border-color: #400080;}
+.chronos-event--setup-time .chronos-monthView-eventTitle {border-left: 5px solid; color: #400080;}
+.chronos-event--setup-time .chronos-agendaView-legend {background-color: #400080;}
+.chronos-event--setup-time .chronos-agendaView-item-time {border-color: #400080;}
+.chronos-headerView-tagsList .chronos-tag--setup-time {border-left: 5px solid; border-color: #400080;}
+.eventOverview > .atStatus-setuptime {border-color: #400080;}
+.chronos-moreEvents-event--setup-time .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #400080;}
+
+/* Activity type "Tdown Time" */
+.chronos-event--tdown-time {border-color: #3C0077;}
+.chronos-event--tdown-time .chronos-monthView-eventTitle {border-left: 5px solid; color: #3C0077;}
+.chronos-event--tdown-time .chronos-agendaView-legend {background-color: #3C0077;}
+.chronos-event--tdown-time .chronos-agendaView-item-time {border-color: #3C0077;}
+.chronos-headerView-tagsList .chronos-tag--tdown-time {border-left: 5px solid; border-color: #3C0077;}
+.eventOverview > .atStatus-tdowntime {border-color: #3C0077;}
+.chronos-moreEvents-event--tdown-time .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #3C0077;}
+
+/* Activity type "Feedback" */
+.chronos-event--feedback {border-color: #800080;}
+.chronos-event--feedback .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--feedback .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--feedback .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--feedback {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-feedback {border-color: #800080;}
+.chronos-moreEvents-event--feedback .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Streaming" */
+.chronos-event--streaming {border-color: #FF0000;}
+.chronos-event--streaming .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--streaming .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--streaming .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--streaming {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-streaming {border-color: #FF0000;}
+.chronos-moreEvents-event--streaming .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Lec (Additional)" */
+.chronos-event--lec-\005C 0028 additional\005C 0029  {border-color: #82A55A;}
+.chronos-event--lec-\005C 0028 additional\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #82A55A;}
+.chronos-event--lec-\005C 0028 additional\005C 0029  .chronos-agendaView-legend {background-color: #82A55A;}
+.chronos-event--lec-\005C 0028 additional\005C 0029  .chronos-agendaView-item-time {border-color: #82A55A;}
+.chronos-headerView-tagsList .chronos-tag--lec-\005C 0028 additional\005C 0029  {border-left: 5px solid; border-color: #82A55A;}
+.eventOverview > .atStatus-lecadditional {border-color: #82A55A;}
+.chronos-moreEvents-event--lec-\005C 0028 additional\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #82A55A;}
+
+/* Activity type ".ERROR! Plse contact TT" */
+.chronos-event--.error\005C 0021 -plse.contact.tt {border-color: #FF0000;}
+.chronos-event--.error\005C 0021 -plse.contact.tt .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--.error\005C 0021 -plse.contact.tt .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--.error\005C 0021 -plse.contact.tt .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--.error\005C 0021 -plse.contact.tt {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-.errorplsecontacttt {border-color: #FF0000;}
+.chronos-moreEvents-event--.error\005C 0021 -plse.contact.tt .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Mock Interviewing Assessment" */
+.chronos-event--mock-interviewing.assessment {border-color: #80FF00;}
+.chronos-event--mock-interviewing.assessment .chronos-monthView-eventTitle {border-left: 5px solid; color: #80FF00;}
+.chronos-event--mock-interviewing.assessment .chronos-agendaView-legend {background-color: #80FF00;}
+.chronos-event--mock-interviewing.assessment .chronos-agendaView-item-time {border-color: #80FF00;}
+.chronos-headerView-tagsList .chronos-tag--mock-interviewing.assessment {border-left: 5px solid; border-color: #80FF00;}
+.eventOverview > .atStatus-mockinterviewingassessment {border-color: #80FF00;}
+.chronos-moreEvents-event--mock-interviewing.assessment .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #80FF00;}
+
+/* Activity type "Mock Assessment" */
+.chronos-event--mock-assessment {border-color: #008000;}
+.chronos-event--mock-assessment .chronos-monthView-eventTitle {border-left: 5px solid; color: #008000;}
+.chronos-event--mock-assessment .chronos-agendaView-legend {background-color: #008000;}
+.chronos-event--mock-assessment .chronos-agendaView-item-time {border-color: #008000;}
+.chronos-headerView-tagsList .chronos-tag--mock-assessment {border-left: 5px solid; border-color: #008000;}
+.eventOverview > .atStatus-mockassessment {border-color: #008000;}
+.chronos-moreEvents-event--mock-assessment .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #008000;}
+
+/* Activity type "Main Assessment" */
+.chronos-event--main-assessment {border-color: #00FFFF;}
+.chronos-event--main-assessment .chronos-monthView-eventTitle {border-left: 5px solid; color: #00FFFF;}
+.chronos-event--main-assessment .chronos-agendaView-legend {background-color: #00FFFF;}
+.chronos-event--main-assessment .chronos-agendaView-item-time {border-color: #00FFFF;}
+.chronos-headerView-tagsList .chronos-tag--main-assessment {border-left: 5px solid; border-color: #00FFFF;}
+.eventOverview > .atStatus-mainassessment {border-color: #00FFFF;}
+.chronos-moreEvents-event--main-assessment .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #00FFFF;}
+
+/* Activity type "Main Interviewing & Advising Assessment" */
+.chronos-event--main-interviewing.\005C 0026 .advising.assessment {border-color: #0080FF;}
+.chronos-event--main-interviewing.\005C 0026 .advising.assessment .chronos-monthView-eventTitle {border-left: 5px solid; color: #0080FF;}
+.chronos-event--main-interviewing.\005C 0026 .advising.assessment .chronos-agendaView-legend {background-color: #0080FF;}
+.chronos-event--main-interviewing.\005C 0026 .advising.assessment .chronos-agendaView-item-time {border-color: #0080FF;}
+.chronos-headerView-tagsList .chronos-tag--main-interviewing.\005C 0026 .advising.assessment {border-left: 5px solid; border-color: #0080FF;}
+.eventOverview > .atStatus-maininterviewingadvisingassessment {border-color: #0080FF;}
+.chronos-moreEvents-event--main-interviewing.\005C 0026 .advising.assessment .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0080FF;}
+
+/* Activity type "Room Not Available for Teaching" */
+.chronos-event--room-not.available.for.teaching {border-color: #008040;}
+.chronos-event--room-not.available.for.teaching .chronos-monthView-eventTitle {border-left: 5px solid; color: #008040;}
+.chronos-event--room-not.available.for.teaching .chronos-agendaView-legend {background-color: #008040;}
+.chronos-event--room-not.available.for.teaching .chronos-agendaView-item-time {border-color: #008040;}
+.chronos-headerView-tagsList .chronos-tag--room-not.available.for.teaching {border-left: 5px solid; border-color: #008040;}
+.eventOverview > .atStatus-roomnotavailableforteaching {border-color: #008040;}
+.chronos-moreEvents-event--room-not.available.for.teaching .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #008040;}
+
+
+/* Activity type "SGS (Law Small Group Session)" */
+.chronos-event--sgs-\005C 0028 law.small.group.session\005C 0029  {border-color: #FF0080;}
+.chronos-event--sgs-\005C 0028 law.small.group.session\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0080;}
+.chronos-event--sgs-\005C 0028 law.small.group.session\005C 0029  .chronos-agendaView-legend {background-color: #FF0080;}
+.chronos-event--sgs-\005C 0028 law.small.group.session\005C 0029  .chronos-agendaView-item-time {border-color: #FF0080;}
+.chronos-headerView-tagsList .chronos-tag--sgs-\005C 0028 law.small.group.session\005C 0029  {border-left: 5px solid; border-color: #FF0080;}
+.eventOverview > .atStatus-sgslawsmallgroupsession {border-color: #FF0080;}
+.chronos-moreEvents-event--sgs-\005C 0028 law.small.group.session\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0080;}
+
+/* Activity type "LGS (Law Large Group Session)" */
+.chronos-event--lgs-\005C 0028 law.large.group.session\005C 0029  {border-color: #8000FF;}
+.chronos-event--lgs-\005C 0028 law.large.group.session\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #8000FF;}
+.chronos-event--lgs-\005C 0028 law.large.group.session\005C 0029  .chronos-agendaView-legend {background-color: #8000FF;}
+.chronos-event--lgs-\005C 0028 law.large.group.session\005C 0029  .chronos-agendaView-item-time {border-color: #8000FF;}
+.chronos-headerView-tagsList .chronos-tag--lgs-\005C 0028 law.large.group.session\005C 0029  {border-left: 5px solid; border-color: #8000FF;}
+.eventOverview > .atStatus-lgslawlargegroupsession {border-color: #8000FF;}
+.chronos-moreEvents-event--lgs-\005C 0028 law.large.group.session\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8000FF;}
+
+/* Activity type "Lang (Oral)" */
+.chronos-event--lang-\005C 0028 oral\005C 0029  {border-color: #00FFFF;}
+.chronos-event--lang-\005C 0028 oral\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #00FFFF;}
+.chronos-event--lang-\005C 0028 oral\005C 0029  .chronos-agendaView-legend {background-color: #00FFFF;}
+.chronos-event--lang-\005C 0028 oral\005C 0029  .chronos-agendaView-item-time {border-color: #00FFFF;}
+.chronos-headerView-tagsList .chronos-tag--lang-\005C 0028 oral\005C 0029  {border-left: 5px solid; border-color: #00FFFF;}
+.eventOverview > .atStatus-langoral {border-color: #00FFFF;}
+.chronos-moreEvents-event--lang-\005C 0028 oral\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #00FFFF;}
+
+/* Activity type "Assessment (Exams)" */
+.chronos-event--assessment-\005C 0028 exams\005C 0029  {border-color: #CB0161;}
+.chronos-event--assessment-\005C 0028 exams\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #CB0161;}
+.chronos-event--assessment-\005C 0028 exams\005C 0029  .chronos-agendaView-legend {background-color: #CB0161;}
+.chronos-event--assessment-\005C 0028 exams\005C 0029  .chronos-agendaView-item-time {border-color: #CB0161;}
+.chronos-headerView-tagsList .chronos-tag--assessment-\005C 0028 exams\005C 0029  {border-left: 5px solid; border-color: #CB0161;}
+.eventOverview > .atStatus-assessmentexams {border-color: #CB0161;}
+.chronos-moreEvents-event--assessment-\005C 0028 exams\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #CB0161;}
+
+/* Activity type "Assessment (In Class Test)" */
+.chronos-event--assessment-\005C 0028 in.class.test\005C 0029  {border-color: #FF5555;}
+.chronos-event--assessment-\005C 0028 in.class.test\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF5555;}
+.chronos-event--assessment-\005C 0028 in.class.test\005C 0029  .chronos-agendaView-legend {background-color: #FF5555;}
+.chronos-event--assessment-\005C 0028 in.class.test\005C 0029  .chronos-agendaView-item-time {border-color: #FF5555;}
+.chronos-headerView-tagsList .chronos-tag--assessment-\005C 0028 in.class.test\005C 0029  {border-left: 5px solid; border-color: #FF5555;}
+.eventOverview > .atStatus-assessmentinclasstest {border-color: #FF5555;}
+.chronos-moreEvents-event--assessment-\005C 0028 in.class.test\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF5555;}
+
+/* Activity type "Meetings (Presentation / Talk)" */
+.chronos-event--meetings-\005C 0028 presentation.\005C 002F .talk\005C 0029  {border-color: #0000FF;}
+.chronos-event--meetings-\005C 0028 presentation.\005C 002F .talk\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #0000FF;}
+.chronos-event--meetings-\005C 0028 presentation.\005C 002F .talk\005C 0029  .chronos-agendaView-legend {background-color: #0000FF;}
+.chronos-event--meetings-\005C 0028 presentation.\005C 002F .talk\005C 0029  .chronos-agendaView-item-time {border-color: #0000FF;}
+.chronos-headerView-tagsList .chronos-tag--meetings-\005C 0028 presentation.\005C 002F .talk\005C 0029  {border-left: 5px solid; border-color: #0000FF;}
+.eventOverview > .atStatus-meetingspresentationtalk {border-color: #0000FF;}
+.chronos-moreEvents-event--meetings-\005C 0028 presentation.\005C 002F .talk\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0000FF;}
+
+/* Activity type "Assessment (Presentation / Poster Session / Viva)" */
+.chronos-event--assessment-\005C 0028 presentation.\005C 002F .poster.session.\005C 002F .viva\005C 0029  {border-color: #5A5AAD;}
+.chronos-event--assessment-\005C 0028 presentation.\005C 002F .poster.session.\005C 002F .viva\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #5A5AAD;}
+.chronos-event--assessment-\005C 0028 presentation.\005C 002F .poster.session.\005C 002F .viva\005C 0029  .chronos-agendaView-legend {background-color: #5A5AAD;}
+.chronos-event--assessment-\005C 0028 presentation.\005C 002F .poster.session.\005C 002F .viva\005C 0029  .chronos-agendaView-item-time {border-color: #5A5AAD;}
+.chronos-headerView-tagsList .chronos-tag--assessment-\005C 0028 presentation.\005C 002F .poster.session.\005C 002F .viva\005C 0029  {border-left: 5px solid; border-color: #5A5AAD;}
+.eventOverview > .atStatus-assessmentpresentationpostersessionviva {border-color: #5A5AAD;}
+.chronos-moreEvents-event--assessment-\005C 0028 presentation.\005C 002F .poster.session.\005C 002F .viva\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #5A5AAD;}
+
+/* Activity type "Provisional Booking / Placeholder" */
+.chronos-event--provisional-booking.\005C 002F .placeholder {border-color: #80FF80;}
+.chronos-event--provisional-booking.\005C 002F .placeholder .chronos-monthView-eventTitle {border-left: 5px solid; color: #80FF80;}
+.chronos-event--provisional-booking.\005C 002F .placeholder .chronos-agendaView-legend {background-color: #80FF80;}
+.chronos-event--provisional-booking.\005C 002F .placeholder .chronos-agendaView-item-time {border-color: #80FF80;}
+.chronos-headerView-tagsList .chronos-tag--provisional-booking.\005C 002F .placeholder {border-left: 5px solid; border-color: #80FF80;}
+.eventOverview > .atStatus-provisionalbookingplaceholder {border-color: #80FF80;}
+.chronos-moreEvents-event--provisional-booking.\005C 002F .placeholder .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #80FF80;}
+
+/* Activity type "Lang (Gen)" */
+.chronos-event--lang-\005C 0028 gen\005C 0029  {border-color: #009595;}
+.chronos-event--lang-\005C 0028 gen\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #009595;}
+.chronos-event--lang-\005C 0028 gen\005C 0029  .chronos-agendaView-legend {background-color: #009595;}
+.chronos-event--lang-\005C 0028 gen\005C 0029  .chronos-agendaView-item-time {border-color: #009595;}
+.chronos-headerView-tagsList .chronos-tag--lang-\005C 0028 gen\005C 0029  {border-left: 5px solid; border-color: #009595;}
+.eventOverview > .atStatus-langgen {border-color: #009595;}
+.chronos-moreEvents-event--lang-\005C 0028 gen\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #009595;}
+
+/* Activity type "Meetings (Training)" */
+.chronos-event--meetings-\005C 0028 training\005C 0029  {border-color: #400000;}
+.chronos-event--meetings-\005C 0028 training\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #400000;}
+.chronos-event--meetings-\005C 0028 training\005C 0029  .chronos-agendaView-legend {background-color: #400000;}
+.chronos-event--meetings-\005C 0028 training\005C 0029  .chronos-agendaView-item-time {border-color: #400000;}
+.chronos-headerView-tagsList .chronos-tag--meetings-\005C 0028 training\005C 0029  {border-left: 5px solid; border-color: #400000;}
+.eventOverview > .atStatus-meetingstraining {border-color: #400000;}
+.chronos-moreEvents-event--meetings-\005C 0028 training\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #400000;}
+
+/* Activity type "Bank Holiday & Reduced Service" */
+.chronos-event--bank-holiday.\005C 0026 .reduced.service {border-color: #FF0000;}
+.chronos-event--bank-holiday.\005C 0026 .reduced.service .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0000;}
+.chronos-event--bank-holiday.\005C 0026 .reduced.service .chronos-agendaView-legend {background-color: #FF0000;}
+.chronos-event--bank-holiday.\005C 0026 .reduced.service .chronos-agendaView-item-time {border-color: #FF0000;}
+.chronos-headerView-tagsList .chronos-tag--bank-holiday.\005C 0026 .reduced.service {border-left: 5px solid; border-color: #FF0000;}
+.eventOverview > .atStatus-bankholidayreducedservice {border-color: #FF0000;}
+.chronos-moreEvents-event--bank-holiday.\005C 0026 .reduced.service .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0000;}
+
+/* Activity type "Examples Class" */
+.chronos-event--examples-class {border-color: #000080;}
+.chronos-event--examples-class .chronos-monthView-eventTitle {border-left: 5px solid; color: #000080;}
+.chronos-event--examples-class .chronos-agendaView-legend {background-color: #000080;}
+.chronos-event--examples-class .chronos-agendaView-item-time {border-color: #000080;}
+.chronos-headerView-tagsList .chronos-tag--examples-class {border-left: 5px solid; border-color: #000080;}
+.eventOverview > .atStatus-examplesclass {border-color: #000080;}
+.chronos-moreEvents-event--examples-class .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #000080;}
+
+/* Activity type "Lang (Writ)" */
+.chronos-event--lang-\005C 0028 writ\005C 0029  {border-color: #0080C0;}
+.chronos-event--lang-\005C 0028 writ\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #0080C0;}
+.chronos-event--lang-\005C 0028 writ\005C 0029  .chronos-agendaView-legend {background-color: #0080C0;}
+.chronos-event--lang-\005C 0028 writ\005C 0029  .chronos-agendaView-item-time {border-color: #0080C0;}
+.chronos-headerView-tagsList .chronos-tag--lang-\005C 0028 writ\005C 0029  {border-left: 5px solid; border-color: #0080C0;}
+.eventOverview > .atStatus-langwrit {border-color: #0080C0;}
+.chronos-moreEvents-event--lang-\005C 0028 writ\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #0080C0;}
+
+/* Activity type "Prac (Workshop / Groupwork)" */
+.chronos-event--prac-\005C 0028 workshop.\005C 002F .groupwork\005C 0029  {border-color: #800080;}
+.chronos-event--prac-\005C 0028 workshop.\005C 002F .groupwork\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--prac-\005C 0028 workshop.\005C 002F .groupwork\005C 0029  .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--prac-\005C 0028 workshop.\005C 002F .groupwork\005C 0029  .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--prac-\005C 0028 workshop.\005C 002F .groupwork\005C 0029  {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-pracworkshopgroupwork {border-color: #800080;}
+.chronos-moreEvents-event--prac-\005C 0028 workshop.\005C 002F .groupwork\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Employability (Career Session)" */
+.chronos-event--employability-\005C 0028 career.session\005C 0029  {border-color: #800080;}
+.chronos-event--employability-\005C 0028 career.session\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #800080;}
+.chronos-event--employability-\005C 0028 career.session\005C 0029  .chronos-agendaView-legend {background-color: #800080;}
+.chronos-event--employability-\005C 0028 career.session\005C 0029  .chronos-agendaView-item-time {border-color: #800080;}
+.chronos-headerView-tagsList .chronos-tag--employability-\005C 0028 career.session\005C 0029  {border-left: 5px solid; border-color: #800080;}
+.eventOverview > .atStatus-employabilitycareersession {border-color: #800080;}
+.chronos-moreEvents-event--employability-\005C 0028 career.session\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #800080;}
+
+/* Activity type "Student Placement" */
+.chronos-event--student-placement {border-color: #FB0429;}
+.chronos-event--student-placement .chronos-monthView-eventTitle {border-left: 5px solid; color: #FB0429;}
+.chronos-event--student-placement .chronos-agendaView-legend {background-color: #FB0429;}
+.chronos-event--student-placement .chronos-agendaView-item-time {border-color: #FB0429;}
+.chronos-headerView-tagsList .chronos-tag--student-placement {border-left: 5px solid; border-color: #FB0429;}
+.eventOverview > .atStatus-studentplacement {border-color: #FB0429;}
+.chronos-moreEvents-event--student-placement .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FB0429;}
+
+
+/* Activity type "Conference KX / S+ link" */
+.chronos-event--conference-kx.\005C 002F .s\002B .link {border-color: #F4007A;}
+.chronos-event--conference-kx.\005C 002F .s\002B .link .chronos-monthView-eventTitle {border-left: 5px solid; color: #F4007A;}
+.chronos-event--conference-kx.\005C 002F .s\002B .link .chronos-agendaView-legend {background-color: #F4007A;}
+.chronos-event--conference-kx.\005C 002F .s\002B .link .chronos-agendaView-item-time {border-color: #F4007A;}
+.chronos-headerView-tagsList .chronos-tag--conference-kx.\005C 002F .s\002B .link {border-left: 5px solid; border-color: #F4007A;}
+.eventOverview > .atStatus-conferencekxslink {border-color: #F4007A;}
+.chronos-moreEvents-event--conference-kx.\005C 002F .s\002B .link .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #F4007A;}
+
+/* Activity type "Meetings (Exam & Award Boards)" */
+.chronos-event--meetings-\005C 0028 exam.\005C 0026 .award.boards\005C 0029  {border-color: #FFFF00;}
+.chronos-event--meetings-\005C 0028 exam.\005C 0026 .award.boards\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #FFFF00;}
+.chronos-event--meetings-\005C 0028 exam.\005C 0026 .award.boards\005C 0029  .chronos-agendaView-legend {background-color: #FFFF00;}
+.chronos-event--meetings-\005C 0028 exam.\005C 0026 .award.boards\005C 0029  .chronos-agendaView-item-time {border-color: #FFFF00;}
+.chronos-headerView-tagsList .chronos-tag--meetings-\005C 0028 exam.\005C 0026 .award.boards\005C 0029  {border-left: 5px solid; border-color: #FFFF00;}
+.eventOverview > .atStatus-meetingsexamawardboards {border-color: #FFFF00;}
+.chronos-moreEvents-event--meetings-\005C 0028 exam.\005C 0026 .award.boards\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FFFF00;}
+
+/* Activity type "Employability (Poster Session)" */
+.chronos-event--employability-\005C 0028 poster.session\005C 0029  {border-color: #5FD6DC;}
+.chronos-event--employability-\005C 0028 poster.session\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #5FD6DC;}
+.chronos-event--employability-\005C 0028 poster.session\005C 0029  .chronos-agendaView-legend {background-color: #5FD6DC;}
+.chronos-event--employability-\005C 0028 poster.session\005C 0029  .chronos-agendaView-item-time {border-color: #5FD6DC;}
+.chronos-headerView-tagsList .chronos-tag--employability-\005C 0028 poster.session\005C 0029  {border-left: 5px solid; border-color: #5FD6DC;}
+.eventOverview > .atStatus-employabilitypostersession {border-color: #5FD6DC;}
+.chronos-moreEvents-event--employability-\005C 0028 poster.session\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #5FD6DC;}
+
+/* Activity type "Lang (Gram)" */
+.chronos-event--lang-\005C 0028 gram\005C 0029  {border-color: #6666FF;}
+.chronos-event--lang-\005C 0028 gram\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #6666FF;}
+.chronos-event--lang-\005C 0028 gram\005C 0029  .chronos-agendaView-legend {background-color: #6666FF;}
+.chronos-event--lang-\005C 0028 gram\005C 0029  .chronos-agendaView-item-time {border-color: #6666FF;}
+.chronos-headerView-tagsList .chronos-tag--lang-\005C 0028 gram\005C 0029  {border-left: 5px solid; border-color: #6666FF;}
+.eventOverview > .atStatus-langgram {border-color: #6666FF;}
+.chronos-moreEvents-event--lang-\005C 0028 gram\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #6666FF;}
+
+/* Activity type "Drop In / Optional session" */
+.chronos-event--drop-in.\005C 002F .optional.session {border-color: #FF0080;}
+.chronos-event--drop-in.\005C 002F .optional.session .chronos-monthView-eventTitle {border-left: 5px solid; color: #FF0080;}
+.chronos-event--drop-in.\005C 002F .optional.session .chronos-agendaView-legend {background-color: #FF0080;}
+.chronos-event--drop-in.\005C 002F .optional.session .chronos-agendaView-item-time {border-color: #FF0080;}
+.chronos-headerView-tagsList .chronos-tag--drop-in.\005C 002F .optional.session {border-left: 5px solid; border-color: #FF0080;}
+.eventOverview > .atStatus-dropinoptionalsession {border-color: #FF0080;}
+.chronos-moreEvents-event--drop-in.\005C 002F .optional.session .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FF0080;}
+
+/* Activity type "Prep (Field work)" */
+.chronos-event--prep-\005C 0028 field.work\005C 0029  {border-color: #D200D2;}
+.chronos-event--prep-\005C 0028 field.work\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #D200D2;}
+.chronos-event--prep-\005C 0028 field.work\005C 0029  .chronos-agendaView-legend {background-color: #D200D2;}
+.chronos-event--prep-\005C 0028 field.work\005C 0029  .chronos-agendaView-item-time {border-color: #D200D2;}
+.chronos-headerView-tagsList .chronos-tag--prep-\005C 0028 field.work\005C 0029  {border-left: 5px solid; border-color: #D200D2;}
+.eventOverview > .atStatus-prepfieldwork {border-color: #D200D2;}
+.chronos-moreEvents-event--prep-\005C 0028 field.work\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #D200D2;}
+
+/* Activity type "Prep (Setup Time)" */
+.chronos-event--prep-\005C 0028 setup.time\005C 0029  {border-color: #400080;}
+.chronos-event--prep-\005C 0028 setup.time\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #400080;}
+.chronos-event--prep-\005C 0028 setup.time\005C 0029  .chronos-agendaView-legend {background-color: #400080;}
+.chronos-event--prep-\005C 0028 setup.time\005C 0029  .chronos-agendaView-item-time {border-color: #400080;}
+.chronos-headerView-tagsList .chronos-tag--prep-\005C 0028 setup.time\005C 0029  {border-left: 5px solid; border-color: #400080;}
+.eventOverview > .atStatus-prepsetuptime {border-color: #400080;}
+.chronos-moreEvents-event--prep-\005C 0028 setup.time\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #400080;}
+
+/* Activity type "Prep (Tdown Time)" */
+.chronos-event--prep-\005C 0028 tdown.time\005C 0029  {border-color: #3C0077;}
+.chronos-event--prep-\005C 0028 tdown.time\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #3C0077;}
+.chronos-event--prep-\005C 0028 tdown.time\005C 0029  .chronos-agendaView-legend {background-color: #3C0077;}
+.chronos-event--prep-\005C 0028 tdown.time\005C 0029  .chronos-agendaView-item-time {border-color: #3C0077;}
+.chronos-headerView-tagsList .chronos-tag--prep-\005C 0028 tdown.time\005C 0029  {border-left: 5px solid; border-color: #3C0077;}
+.eventOverview > .atStatus-preptdowntime {border-color: #3C0077;}
+.chronos-moreEvents-event--prep-\005C 0028 tdown.time\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #3C0077;}
+
+/* Activity type "Room Not Available for Teaching" */
+.chronos-event--room-not.available.for.teaching {border-color: #008040;}
+.chronos-event--room-not.available.for.teaching .chronos-monthView-eventTitle {border-left: 5px solid; color: #008040;}
+.chronos-event--room-not.available.for.teaching .chronos-agendaView-legend {background-color: #008040;}
+.chronos-event--room-not.available.for.teaching .chronos-agendaView-item-time {border-color: #008040;}
+.chronos-headerView-tagsList .chronos-tag--room-not.available.for.teaching {border-left: 5px solid; border-color: #008040;}
+.eventOverview > .atStatus-roomnotavailableforteaching {border-color: #008040;}
+.chronos-moreEvents-event--room-not.available.for.teaching .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #008040;}
+
+/* Activity type "Dissertation" */
+.chronos-event--dissertation {border-color: #FFFF00;}
+.chronos-event--dissertation .chronos-monthView-eventTitle {border-left: 5px solid; color: #FFFF00;}
+.chronos-event--dissertation .chronos-agendaView-legend {background-color: #FFFF00;}
+.chronos-event--dissertation .chronos-agendaView-item-time {border-color: #FFFF00;}
+.chronos-headerView-tagsList .chronos-tag--dissertation {border-left: 5px solid; border-color: #FFFF00;}
+.eventOverview > .atStatus-dissertation {border-color: #FFFF00;}
+.chronos-moreEvents-event--dissertation .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #FFFF00;}
+
+/* Activity type "Lang (Prof)" */
+.chronos-event--lang-\005C 0028 prof\005C 0029  {border-color: #8BF2F8;}
+.chronos-event--lang-\005C 0028 prof\005C 0029  .chronos-monthView-eventTitle {border-left: 5px solid; color: #8BF2F8;}
+.chronos-event--lang-\005C 0028 prof\005C 0029  .chronos-agendaView-legend {background-color: #8BF2F8;}
+.chronos-event--lang-\005C 0028 prof\005C 0029  .chronos-agendaView-item-time {border-color: #8BF2F8;}
+.chronos-headerView-tagsList .chronos-tag--lang-\005C 0028 prof\005C 0029  {border-left: 5px solid; border-color: #8BF2F8;}
+.eventOverview > .atStatus-langprof {border-color: #8BF2F8;}
+.chronos-moreEvents-event--lang-\005C 0028 prof\005C 0029  .chronos-moreEvents-event-eventTitle {border-left: 5px solid; border-color: #8BF2F8;}
+

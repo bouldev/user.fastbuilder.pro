@@ -1,0 +1,122 @@
+
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+.back {
+	position: absolute;
+	transition: all ease-in-out .6s;
+	background-color: grey;
+	border-radius: 40%;
+	top:-50%;
+	left:-50%;
+	width: 80%;
+	height: 80%;
+	z-index: 0;
+}
+
+.back-fill {
+	width: 190%;
+	height: 190%;
+	border-radius: 0%;
+}
+
+.lowin-group {
+	position: relative;
+}
+.lowin-group label {
+	position: absolute;
+	left: 1rem;
+	top: .8rem;
+	transition:all ease-in-out .2s;
+	color: rgba(68,160,170,.3) !important;
+}
+
+.lowin-input:focus + label,.lowin-input:not(:placeholder-shown) + label {
+	color: rgba(68,160,170,.7);
+	top: -1.2rem;
+}
+
+.lowin-buttondiv {
+	text-align: center;
+}
+
+.lowin-btn:disabled:not(.back-fill) {
+	width: 60px !important;
+	height: 60px !important;
+	border-radius: 50% !important;
+	background-color: grey !important;
+	font-size: 0;
+	animation: runningCircle 3s ease-in-out infinite;
+}
+
+.back-fill.lowin-btn:disabled {
+	transition: all ease-in-out .6s;
+	width: 60px !important;
+	height: 60px !important;
+	border-radius: 50% !important;
+	background-color: #44a0b3 !important;
+	font-size: 0;
+	position: relative;
+	z-index: 2;
+	opacity: 1 !important;
+	animation: growingCircle 3s ease-in-out forwards;
+}
+
+@keyframes growingCircle {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(50);
+	}
+	100% {
+		transform: scale(500);
+	}
+}
+
+@keyframes runningCircle {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+hr {
+	height: 6px;
+	border: none;
+}
+
+.fb-product-checkbox {
+	display:none;
+}
+.fb-product-checkbox+label {
+	transition: all ease-in-out .6s;
+	width: 100%;
+	padding: 15px 20px;
+	border-radius: 3px;
+	border: none;
+	color: var(--color-dark);
+	background-color: var(--color-grey);
+	display: inline-block;
+	position: relative;
+	background-position: 0 0px;
+}
+.fb-product-checkbox:checked+label {
+	transition: all ease-in-out .6s;
+	width: 100%;
+	padding: 15px 20px;
+	border-radius: 3px;
+	border: none;
+	color: white;
+	background-color: #00d3ff;
+	display: inline-block;
+	position: relative;
+	background-position: 0 0px;
+}

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg18"
+   width="181.60391"
+   height="16.747263"
+   viewBox="0 0 181.60391 16.747263"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath62-3">
+      <path
+         d="M 55.7,139.804 H 548.588 V 709.199 H 55.7 Z"
+         clip-rule="evenodd"
+         id="path60-6" />
+    </clipPath>
+  </defs>
+  <g
+     id="g26"
+     transform="matrix(1.3333333,0,0,-1.3333333,-162.00034,610.42114)">
+    <g
+       id="g56"
+       transform="translate(-112.74734,26.238216)">
+      <g
+         id="g58"
+         clip-path="url(#clipPath62-3)">
+        <g
+           id="g64">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,234.312,419.187)"
+             style="font-style:italic;font-variant:normal;font-size:11.991px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif-Italic;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text68"><tspan
+               x="0"
+               y="0"
+               id="tspan66">R</tspan></text>
+        </g>
+        <g
+           id="g70">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,242.391,419.187)"
+             style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:OpenSymbol;-inkscape-font-specification:OpenSymbol;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text74"><tspan
+               x="0"
+               y="0"
+               id="tspan72">=</tspan></text>
+        </g>
+        <g
+           id="g76">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,252.397,419.187)"
+             style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text80"><tspan
+               x="0 5.9955001 8.9932499 15.072687"
+               y="0"
+               id="tspan78">0.97</tspan></text>
+        </g>
+        <g
+           id="g82">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,273.997,419.187)"
+             style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:OpenSymbol;-inkscape-font-specification:OpenSymbol;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text86"><tspan
+               x="0"
+               y="0"
+               id="tspan84">−</tspan></text>
+        </g>
+        <g
+           id="g88">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,284.003,419.187)"
+             style="font-variant:normal;font-weight:normal;font-size:11.991px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text92"><tspan
+               x="0 5.9955001 8.9932499 15.072687"
+               y="0"
+               id="tspan90">0.85</tspan></text>
+        </g>
+        <g
+           id="g94">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,306.709,419.187)"
+             style="font-style:italic;font-variant:normal;font-size:11.991px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif-Italic;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text98"><tspan
+               x="0"
+               y="0"
+               id="tspan96">e</tspan></text>
+        </g>
+        <g
+           id="g100">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,311.896,425.197)"
+             style="font-variant:normal;font-weight:normal;font-size:7.2px;font-family:OpenSymbol;-inkscape-font-specification:OpenSymbol;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text104"><tspan
+               x="0"
+               y="0"
+               id="tspan102">−</tspan></text>
+        </g>
+        <g
+           id="g106">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,317.792,425.197)"
+             style="font-variant:normal;font-weight:normal;font-size:7.2px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text110"><tspan
+               x="0 3.5999999 5.4000001 9 12.6 16.200001 19.799999 23.4 27.093599"
+               y="0"
+               id="tspan108">3.7053714</tspan></text>
+        </g>
+        <g
+           id="g112">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,348.888,425.197)"
+             style="font-variant:normal;font-weight:normal;font-size:7.2px;font-family:OpenSymbol;-inkscape-font-specification:OpenSymbol;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text116"><tspan
+               x="0"
+               y="0"
+               id="tspan114">×</tspan></text>
+        </g>
+        <g
+           id="g118">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,354.813,425.197)"
+             style="font-variant:normal;font-weight:normal;font-size:7.2px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text122"><tspan
+               x="0 3.5999999"
+               y="0"
+               id="tspan120">10</tspan></text>
+        </g>
+        <g
+           id="g124">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,361.814,428.712)"
+             style="font-variant:normal;font-weight:normal;font-size:4.309px;font-family:OpenSymbol;-inkscape-font-specification:OpenSymbol;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text128"><tspan
+               x="0"
+               y="0"
+               id="tspan126">−</tspan></text>
+        </g>
+        <g
+           id="g130">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,365.301,428.712)"
+             style="font-variant:normal;font-weight:normal;font-size:4.309px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text134"><tspan
+               x="0"
+               y="0"
+               id="tspan132">8</tspan></text>
+        </g>
+        <g
+           id="g136">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,368.306,425.197)"
+             style="font-style:italic;font-variant:normal;font-size:7.2px;font-family:'Liberation Serif';-inkscape-font-specification:LiberationSerif-Italic;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text140"><tspan
+               x="0"
+               y="0"
+               id="tspan138">t</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

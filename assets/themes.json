@@ -1,0 +1,27 @@
+{
+	"classic": {
+		"name": "Classic Theme",
+		"description": "Classic Theme for FastBuilder User Center",
+		"author": "Torrekie",
+		"stylesheets": [
+			"assets/css/vendor-f89f10e7225a7cd659d8c727fab03824.css",
+			"assets/css/scientia-publish2-b986c540e8390af88686170333255ae8.css",
+			"assets/css/custom-85eb70db5c3542e87a218e35d0607055.css",
+			"assets/css/additional-classic.css"
+		],
+		"replacesheets": [
+		]
+	},
+	"bootstrap": {
+		"name": "Bootstrap Theme",
+		"description": "A new theme for FBUC based on Bootstrap (https://getbootstrap.com).",
+		"author": "Ruphane",
+		"stylesheets": [
+			"assets/newtheme/bootstrap.min.css",
+			"assets/newtheme/global.css"
+		],
+		"replacesheets": [
+			"assets/newtheme/replacesheet.txt"
+		]
+	}
+}
