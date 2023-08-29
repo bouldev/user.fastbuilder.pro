@@ -124,6 +124,7 @@ let frame={
 		for(let i of menu) {
 			if(i.reserved)continue;
 			if(i.admin&&!localStorage.getItem("admin"))continue;
+			if(i.nodotcs&&localStorage.getItem("is_dotcs"))continue;
 			menuEntries.push(m(menuEntry, {item: i}));
 		}
 		return [
@@ -163,7 +164,7 @@ let frame={
 							),
 							m("div.sidebarUser.ember-view",
 								m("img.sidebarUser-image", {src:"assets/user.png"}),
-								m("span.sidebarUser-name", localStorage.getItem("username")),
+								m("span.sidebarUser-name", localStorage.getItem("is_dotcs")?localStorage.getItem("d_username"):localStorage.getItem("username")), 
 								m("span.sidebarUser-title"/*nothing*/),
 								m(doClassReplace("span.button.at-sidebarUser.sidebarUser-logout"), {
 									onclick: async()=>{

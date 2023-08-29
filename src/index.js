@@ -11,6 +11,8 @@ function do_import(alias) {
 	switch(alias) {
 		case "page_login_by_token":
 			return import("./pages/login/login_by_token.js");
+		case "page_login_by_dotcs":
+			return import("./pages/login/dotcs.js");
 		case "page_login_banned":
 			return import("./pages/login/banned");
 		case "page_announcements":
@@ -59,6 +61,7 @@ API.StartupInit();
 m.route(document.body, "/login", {
 	"/login": loginPage,
 	"/login/bytoken": createCopier("page_login_by_token"),
+	"/login/dotcs": createCopier("page_login_by_dotcs"),
 	"/login/banned": createCopier("page_login_banned"),
 	"/router/enter": entranceRouter,
 	"/announcements": createCopier("page_announcements"),
