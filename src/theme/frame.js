@@ -1,7 +1,7 @@
 import m from "mithril";
 import $ from "jquery";
 import base64 from "crypto-js/enc-base64";
-import utf8encode from "crypto-js/enc-utf8";
+import utf8encode from "crypto-js/enc-utf8"; 
 import menu from "../consts/menu";
 import API from "../api/api";
 

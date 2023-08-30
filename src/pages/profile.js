@@ -8,6 +8,7 @@ let profilePage = {
 	gamenameinputcontent: "",
 	isgamenamesetfailed: false,
 	monthly_plan_duration: 0,
+	license: [],
 	slots: [],
 	no_security: false,
 	helpername: "",
@@ -38,7 +39,7 @@ let profilePage = {
 	bot_linkCode_displayOrdered: false,
 	is_can_show_blc: true,
 	is_dotcs: false,
-	dotcs_username : "",
+	dotcs_username: "",
 	is_hidden_by_default_blc: true,
 	is_commercial_2022: false,
 	is_2fa_enabled: false,
@@ -61,6 +62,7 @@ let profilePage = {
 		profilePage.dotcs_username = generalInfo.dotcs_username;
 		profilePage.gamenameinputcontent = generalInfo.cn_username;
 		profilePage.slots = generalInfo.slots;
+		profilePage.license = generalInfo.license;
 		profilePage.user_points = generalInfo.points || 0;
 		profilePage.nemcbind_status = generalInfo.nemcbind_status;
 		profilePage.phoenix_otp = generalInfo.phoenix_otp;
@@ -150,6 +152,14 @@ let profilePage = {
 				)
 			));
 		}
+		let lisenceControls = [];
+		for (let n in profilePage.license) {
+			let i = profilePage.license[n];
+			lisenceControls.push(m("tr",
+				m("td", i.name + "   "),
+				m("td", i.data),
+			))
+		}
 		return m(frame.frame, { pageName: "用户信息", pageIcon },
 			m(frame.section, { title: "游戏名" },
 				profilePage.isgamenamesetfailed ? m("p", { style: { color: "red" } }, "设置失败") : null,
@@ -195,11 +205,26 @@ let profilePage = {
 				profilePage.is_commercial_2022 ? m("p", { style: { color: "red" } }, "由于您的账号是商业账号，在有效期过期后数日后将会被删除。") : null,
 				m("p", profilePage.monthly_plan_duration === -1 ? "永久" : `剩余 ${profilePage.monthly_plan_duration} 天有效`)
 			),
-			!profilePage.is_dotcs ? null : m(frame.section, { title: "许可证" }, m("p", "请在", m("a", { href: "https://zeus.mcppl.cn/self" }, "DotCS 用户中心-个人信息"), "中查询")),
-			m(frame.section, { title: "租赁服绑定" },
-				m(frame.sectionGeneralText, "请在下方列表中设定您的常用租赁服，每个位置(slot)均在设置后1个月内不可变。您仅可以进入已在这里绑定的租赁服。"),
-				m(frame.sectionGeneralText, "slot 可自商城购买。"),
+			!profilePage.is_dotcs ? null : m(frame.section, { title: "许可证" },
+				m("p", "完整的许可证信息可在", m("a", { href: "https://zeus.mcppl.cn/self" }, "DotCS 用户中心-个人信息"), "中查询"),
 				m(frame.form,
+					m("div.userProfile-form-item",
+						m("table",
+							m("thead",
+								m("tr", m("th", "许可证"), m("th", "有效期")),
+							),
+							m("tbody",
+								lisenceControls)
+						)
+					)
+				)
+			),
+			m(frame.section, { title: "租赁服绑定" },
+				profilePage.is_dotcs ?
+					m(frame.sectionGeneralText, "请在幻梦互联用户中心中查询以及绑定") :
+					m(frame.sectionGeneralText, "请在下方列表中设定您的常用租赁服，每个位置(slot)均在设置后1个月内不可变。您仅可以进入已在这里绑定的租赁服。"),
+				profilePage.is_dotcs ? m(frame.sectionGeneralText, "slot 请前往幻梦互联用户中心中购买。") : m(frame.sectionGeneralText, "slot 可自商城购买。"),
+				profilePage.is_dotcs ? null : m(frame.form,
 					m("div.userProfile-form-item",
 						m("table",
 							m("tr", m("th", "服务器号"), m("th", "类型"), m("th", "操作")),
