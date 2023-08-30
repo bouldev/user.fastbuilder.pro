@@ -73,7 +73,16 @@ let login_by_token_page={
 									e.preventDefault();
 									m.route.set("/login");
 								}
-							}, "登录"),
+							}, "以 FastBuilder 账户登录"),
+							m("br"), m("hr"),
+							m("a", {
+								href: "#",
+								onclick: (e) => {
+									e.preventDefault();
+									console.info("跳转DotCS登录页面")
+									m.route.set("/login/dotcs");
+								}
+							}, "以 DotCS 账户登录"),
 							m("br"),m("hr"),
 							m("a", {
 								href:"#",
@@ -81,7 +90,7 @@ let login_by_token_page={
 									e.preventDefault();
 									m.route.set("/login/register");
 								}
-							}, "注册")
+							}, "注册 FastBuilder 账户")
 						)
 					)
 				)

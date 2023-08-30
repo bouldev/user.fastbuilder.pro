@@ -7,13 +7,13 @@ let APIList={};
 let APISecret="";
 let errorHandler;
 let GiveUpIpv6=false;
-let APIPrefix="https://api.fastbuilder.pro"
-//let APIPrefix="http://127.0.0.1:8687"
-if(location.hostname.match(/\.onion$/)) {
-	APIPrefix="/api";
-}else if(location.hostname.match(/^(127\.0\.0\.1|localhost)/)) {
-	APIPrefix="http://127.0.0.1:8687";
-}
+//let APIPrefix="https://api.fastbuilder.pro"
+let APIPrefix="http://127.0.0.1:8687"
+//if(location.hostname.match(/\.onion$/)) {
+//	APIPrefix="/api";
+//}else if(location.hostname.match(/^(127\.0\.0\.1|localhost)/)) {
+//	APIPrefix="http://127.0.0.1:8687";
+//}
 
 class API {
 	// * [String] `username`: Username.
@@ -46,7 +46,21 @@ class API {
 			});
 		});
 	}
-	
+	// * [String] `username`: Username.
+	// * [String] `password`: Plain password.
+	// * Returns:
+	// ** [Boolean] `success`
+	// ** [String]  `message`
+	// ** [String]  `username`: Username (provided only if login is successful)
+	// ** [String]  `theme`: Preferred theme
+	// ** [String]  `isadmin`
+	static Login_DotCS(username, password) {
+		return new Promise((ret)=>{
+			$.post(APIList.login_dotcs, JSON.stringify({username, password:password}),(response)=>{
+				ret(response);
+			});
+		});
+	}
 	// * Returns:
 	// ** [Array]
 	// *** [String] `title`
@@ -680,12 +694,24 @@ class API {
 					localStorage.removeItem("username");
 					localStorage.removeItem("theme");
 					localStorage.removeItem("admin");
+					localStorage.removeItem("is_dotcs");
+					localStorage.removeItem("d_username");
 				}else{
 					localStorage.setItem("username", ret.username);
 					if(ret.ext) {
 						localStorage.setItem("admin", true);
 					}else{
 						localStorage.removeItem("admin");
+					}
+					if(ret.is_DotCS) {
+						localStorage.setItem("is_dotcs", true);
+					}else{
+						localStorage.removeItem("is_dotcs");
+					}
+					if(ret.DotCS_User_Name){
+						localStorage.setItem("d_username", ret.DotCS_User_Name);
+					}else{
+						localStorage.removeItem("d_username");
 					}
 					localStorage.setItem("theme", ret.theme);
 					

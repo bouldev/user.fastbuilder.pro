@@ -12,7 +12,10 @@ let defaultRouter={
 				if(!localStorage.getItem("username")) {
 					m.route.set("/login");
 					return;
-				}else{
+				}else if (localStorage.getItem("is_dotcs")){
+
+					m.route.set(a.attrs.to||"/profile");
+				} else {
 					m.route.set(a.attrs.to||"/announcements");
 				}
 			})();
