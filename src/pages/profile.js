@@ -52,7 +52,8 @@ let profilePage={
 		profilePage.no_security=generalInfo.no_security;
 		profilePage.bot_linkCode=generalInfo.blc;
 		profilePage.gamenameinputcontent=generalInfo.cn_username;
-		profilePage.slots=generalInfo.slots;
+		//profilePage.slots=generalInfo.slots;
+		// TODO: FREE EVENT
 		profilePage.user_points=generalInfo.points||0;
 		profilePage.nemcbind_status=generalInfo.nemcbind_status;
 		profilePage.phoenix_otp=generalInfo.phoenix_otp;
@@ -61,7 +62,8 @@ let profilePage={
 		}else{
 			profilePage.binded_mail=null;
 		}
-		profilePage.monthly_plan_duration=generalInfo.monthly_plan_duration;
+		//profilePage.monthly_plan_duration=generalInfo.monthly_plan_duration;
+		// TODO: FREE EVENT
 		m.redraw();
 		let helperInfo=await API.GetHelperStatus();
 		profilePage.helpername=helperInfo.username;
@@ -73,7 +75,7 @@ let profilePage={
 		m.redraw();
 	},
 	view: (vnode)=>{
-		let slotControls=[];
+		/*let slotControls=[];
 		for(let n in profilePage.slots) {
 			let num=parseInt(n);
 			let i=profilePage.slots[n];
@@ -140,7 +142,7 @@ let profilePage={
 					}, "删除"):null
 				)
 			));
-		}
+		}*/  // TODO: FREE EVENT
 		return m(frame.frame, {pageName:"用户信息" ,pageIcon},
 			m(frame.section, {title: "游戏名"},
 				profilePage.isgamenamesetfailed?m("p",{style:{color:"red"}},"设置失败"):null,
@@ -173,6 +175,11 @@ let profilePage={
 				},
 				"应用")
 			),
+			m(frame.section, {title: "限时免费活动"},
+				m("p", ["我们对于前段时间的服务停滞感到抱歉，因此，我们借由策略调整以及服务端更新的同时，决定将 FastBuilder 的所有功能",m("b","免费开放"),"给各位现存用户，截止至下一个中国版大更新。"]),
+				m("p", ["免费活动期间，已有用户可以", m("b", "不受限制地"), "使用任何功能，您无需再额外充值，或加购任何业务。在此期间为保证服务器平稳运行，新用户注册暂时关闭。"]),
+				m("p", "由于卡槽在此期间不受限制，请避免骚扰其他租赁服，我们不愿意因部分用户行为而影响所有人的名誉。")
+			), /* // TODO: FREE EVENT
 			m(frame.section, {title: "Points"},
 				m("p", "100 pts = 1 CNY"),
 				m("p", ["剩余 Points: ", m("b", {style:"color:blue;"}, profilePage.user_points.toString())]),
@@ -197,7 +204,7 @@ let profilePage={
 						)
 					)
 				)
-			),
+			),*/
 			m(frame.section, {title: "fbtoken"},
 				m(frame.sectionGeneralText, "fbtoken 是 PhoenixBuilder 用于登入至您的 FastBuilder 用户中心账户的凭证。"),
 				m(frame.sectionGeneralText, "点击下方按钮获取。"),
